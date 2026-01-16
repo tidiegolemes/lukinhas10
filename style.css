@@ -1,98 +1,91 @@
 :root {
-    /* PALETA DARK (PADRÃO) - Estilo "Noite de Jogo" */
-    --primary: #0d80bf;       /* Azul Grêmio Vibrante */
-    --accent: #00d2ff;        /* Ciano Elétrico (Detalhes) */
-    --gold: #ffd700;          /* Ouro Metálico */
-    --bg-page: #0f1115;       /* Fundo quase preto */
-    --bg-card: #1a1d21;       /* Fundo dos cards */
-    --text-main: #ffffff;     /* Texto principal */
-    --text-muted: #a0a0a0;    /* Texto secundário */
-    --border-color: #2a2f35;  /* Bordas sutis */
-    --shadow: 0 8px 30px rgba(0,0,0,0.5); /* Sombra pesada */
-    --gradient: linear-gradient(135deg, #0d80bf 0%, #000000 100%);
+    /* --- PALETA DARK (FIFA PRIME) --- */
+    --bg-body: #090a0c;       /* Preto Profundo */
+    --bg-card: rgba(30, 35, 45, 0.7); /* Vidro Escuro */
+    --primary: #3b82f6;       /* Azul Grêmio Elétrico */
+    --accent: #00eaff;        /* Ciano Neon (Brilho) */
+    --gold: #ffcc00;          /* Dourado Títulos */
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border: 1px solid rgba(255, 255, 255, 0.1);
+    --glow: 0 0 20px rgba(59, 130, 246, 0.3); /* Brilho azul */
+    --gradient-text: linear-gradient(to right, #ffffff, #94a3b8);
 }
 
-/* VARIÁVEIS DO MODO CLARO (Quando ativado) */
+/* --- PALETA LIGHT (MODO DIA) --- */
 .light-mode {
-    --bg-page: #f0f2f5;
+    --bg-body: #eef2f6;
     --bg-card: #ffffff;
-    --text-main: #1a1d21;
-    --text-muted: #666666;
-    --border-color: #e0e0e0;
-    --shadow: 0 4px 20px rgba(0,0,0,0.1);
-    --gradient: linear-gradient(135deg, #0d80bf 0%, #ffffff 100%);
+    --primary: #0d80bf;       /* Azul Grêmio Sólido */
+    --accent: #0056b3;
+    --text-main: #1e293b;     /* Cinza Chumbo Escuro */
+    --text-muted: #64748b;
+    --border: 1px solid rgba(0, 0, 0, 0.05);
+    --glow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --gradient-text: linear-gradient(to right, #0d80bf, #1e293b);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.4s ease, color 0.3s ease, border-color 0.3s; }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-page);
+    background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem lateral */
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
     position: relative;
     z-index: 2;
 }
 
-/* --- BOTÃO FLUTUANTE DE TEMA --- */
+/* --- ANIMAÇÕES (ENTRADA ESTILO APP) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .quick-links, .stats, .season-stats, .career-table-section, .trophies-section, .timeline-section {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* --- BOTÃO TEMA FLUTUANTE --- */
 .theme-switch {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    width: 45px;
-    height: 45px;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background: var(--bg-card);
+    border: var(--border);
+    backdrop-filter: blur(10px);
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: var(--glow);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    font-size: 1.2rem;
 }
 
-/* --- HERO SECTION (Topo Impactante) --- */
+/* --- HERO SECTION (IMPACTO) --- */
 .hero {
-    background: var(--bg-card);
-    padding-top: 60px;
-    padding-bottom: 40px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Efeito de fundo abstrato */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(13,128,191,0.15) 0%, rgba(0,0,0,0) 70%);
-    z-index: 0;
+    text-align: center;
+    padding: 60px 0 40px;
 }
 
 .profile-frame {
     position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 20px;
-    z-index: 2;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 25px;
 }
 
 .profile-pic {
@@ -100,10 +93,8 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--primary);
-    padding: 4px;
-    background: var(--bg-card);
-    box-shadow: 0 0 20px rgba(13, 128, 191, 0.4); /* Glow azul */
+    border: 4px solid var(--bg-body);
+    box-shadow: 0 0 0 4px var(--primary), var(--glow); /* Dupla Borda Brilhante */
 }
 
 .verified-badge {
@@ -112,91 +103,90 @@ body {
     right: 5px;
     background: var(--primary);
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    border: 3px solid var(--bg-card);
+    font-weight: bold;
+    border: 3px solid var(--bg-body);
 }
 
 h1 {
     font-weight: 900;
-    font-size: 2.5rem;
-    color: var(--text-main);
+    font-size: 3rem;
     text-transform: uppercase;
-    letter-spacing: -1px;
-    margin-bottom: 5px;
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: -2px;
+    margin: 0;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Texto Gradiente */
 }
-
-.highlight { color: var(--primary); }
 
 .subtitle {
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
     font-size: 0.9rem;
-    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
 }
 
-.bio-text {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    max-width: 400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
+.bio-text { color: var(--text-muted); font-size: 0.95rem; max-width: 90%; margin: 0 auto; }
 
-/* --- BOTÕES MODERNOS --- */
-.quick-links { margin-top: -20px; margin-bottom: 40px; }
+/* --- BOTÕES "GAME MENU" --- */
+.quick-links { margin-bottom: 40px; }
 
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
-    transition: all 0.2s ease;
-    border: 1px solid rgba(255,255,255,0.05);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.3s;
 }
 
-.btn:active { transform: scale(0.98); }
+.btn:active { transform: scale(0.97); }
 
-/* Efeito de brilho ao passar o mouse */
-.btn:hover { box-shadow: 0 0 15px rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.btn::after { /* Efeito de brilho passando */
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+.btn:hover::after { left: 100%; }
 
-.btn-youtube { background: linear-gradient(90deg, #aa0000 0%, #ff0000 100%); color: white; box-shadow: 0 4px 15px rgba(255,0,0,0.3); }
-.btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
-.btn-tiktok { background: #000000; border: 1px solid #333; color: white; }
+.btn-youtube { background: #ff0000; color: white; border: 1px solid #cc0000; }
+.btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
+.btn-tiktok { background: #000; color: white; border: 1px solid #333; }
 .btn-whatsapp { background: #25D366; color: white; }
 
-/* --- SEÇÕES & CARDS --- */
+/* --- CARDS & ESTATÍSTICAS (GLASSMORPHISM) --- */
 h2 {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
     color: var(--text-main);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-left: 4px solid var(--primary);
-    padding-left: 15px;
-    text-align: left;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+h2::before { content: ''; display: block; width: 6px; height: 25px; background: var(--primary); border-radius: 4px; }
 
 .stats-grid, .stats-grid-circles {
     display: grid;
@@ -204,69 +194,107 @@ h2 {
     margin-bottom: 40px;
 }
 .stats-grid { grid-template-columns: 1fr 1fr; }
-.stats-grid-circles { grid-template-columns: 1fr 1fr 1fr; }
+.stats-grid-circles { grid-template-columns: repeat(3, 1fr); }
 
-/* Card Estilo Glassmorphism */
-.stat-card, .circle-card, .trophy-item, .career-table {
+.stat-card, .circle-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px); /* O VIDRO */
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border);
     border-radius: 16px;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px); /* Efeito vidro */
+    padding: 20px;
+    text-align: center;
 }
 
-.stat-card { padding: 15px; text-align: left; }
-.stat-card .icon { font-size: 1.5rem; margin-bottom: 5px; display: block; }
-.stat-card .label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.stat-card .value { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+/* Ajuste específico para garantir contraste nos textos dos cards */
+.stat-card .label, .circle-card .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
 
-/* Círculos de Stats */
+.stat-card .value, .circle-card .number {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main); /* Garante visibilidade no light mode */
+}
+
+.stat-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+
 .circle-card {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 4px solid var(--primary);
+    border-bottom: 3px solid var(--accent);
+    padding: 15px 5px;
 }
-.circle-card .number { font-size: 2rem; font-weight: 800; color: var(--text-main); }
-.circle-card .label { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; font-weight: 700; }
 
-/* Tabela de Carreira */
-.career-table-section { margin-bottom: 40px; }
-.career-table { width: 100%; border-collapse: collapse; overflow: hidden; }
-.career-table th { background: rgba(13, 128, 191, 0.1); color: var(--primary); padding: 15px; font-size: 0.8rem; text-align: left; }
-.career-table td { padding: 15px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 0.9rem; text-align: left; }
-.career-table tr:last-child td { border-bottom: none; }
+/* --- TABELAS & LISTAS (BUNKER STYLE) --- */
+.career-table, .trophy-item {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: var(--border);
+    border-radius: 16px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    color: var(--text-main); /* Correção do sumiço */
+}
 
-/* Títulos */
+.career-table { border-collapse: separate; border-spacing: 0; width: 100%; }
+.career-table th {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    padding: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+.career-table td {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main); /* Força contraste */
+}
+.light-mode .career-table td { border-top: 1px solid #eee; } /* Borda sutil no claro */
+
 .trophy-item {
     display: flex;
     align-items: center;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-left: 4px solid var(--gold);
+    padding: 20px;
+    border-left: 5px solid var(--gold);
 }
-.trophy-icon { font-size: 1.8rem; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)); }
-.trophy-info strong { display: block; color: var(--text-main); font-size: 1rem; }
-.trophy-info span { font-size: 0.8rem; color: var(--text-muted); }
+.trophy-icon { font-size: 2rem; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255,215,0,0.5)); }
+.trophy-info strong { display: block; font-size: 1.1rem; color: var(--text-main); }
+.trophy-info span { font-size: 0.85rem; color: var(--text-muted); }
 
-/* Timeline */
-.timeline { list-style: none; text-align: left; padding-left: 10px; margin-bottom: 40px; }
-.timeline li { border-left: 2px solid var(--border-color); padding-left: 25px; padding-bottom: 30px; position: relative; }
-.timeline li:last-child { border-left: 2px solid transparent; }
+/* --- TIMELINE --- */
+.timeline { list-style: none; padding-left: 10px; text-align: left; }
+.timeline li {
+    border-left: 2px solid var(--border);
+    padding-left: 25px;
+    padding-bottom: 40px;
+    position: relative;
+}
+.timeline li:last-child { border-color: transparent; }
 .timeline li::before {
-    content: ''; width: 14px; height: 14px;
-    background: var(--bg-page);
-    border: 3px solid var(--primary);
-    position: absolute; left: -8px; top: 0;
+    content: '';
+    position: absolute; left: -6px; top: 0;
+    width: 10px; height: 10px;
+    background: var(--accent);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary);
+    box-shadow: 0 0 10px var(--accent);
 }
-.timeline .year { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
-.timeline h3 { color: var(--text-main); font-size: 1.1rem; margin: 5px 0; }
-.timeline p { color: var(--text-muted); font-size: 0.9rem; }
+.timeline .year { color: var(--accent); font-weight: 800; }
+.timeline h3 { color: var(--text-main); margin: 5px 0; }
 
-/* Footer */
-footer { border-top: 1px solid var(--border-color); padding: 40px 0; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
-footer a { color: var(--primary); text-decoration: none; }
+/* --- FOOTER --- */
+footer {
+    border-top: var(--border);
+    margin-top: 50px;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
