@@ -673,3 +673,185 @@ footer {
     margin-top: 5px;
     font-style: italic;
 }
+/* --- TROFÉUS ESTILO MESSI (DINÂMICO) --- */
+.trophies-dynamic-section {
+    padding: 80px 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--bg-body), #000);
+}
+
+.trophies-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* 1. IMAGEM LATERAL (HERO) */
+.trophy-hero-image {
+    flex: 1;
+    position: relative;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img-effect {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* Efeito de brilho atrás da imagem */
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+    transform: rotate(-2deg);
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.trophy-hero-image::before {
+    content: '';
+    position: absolute;
+    top: 10%; left: -20px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* 2. CARROSSEL DE CARDS */
+.trophy-carousel-wrapper {
+    flex: 1.5;
+    overflow: hidden; /* Mantém o carrossel contido */
+    width: 100%;
+}
+
+.section-title-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+.section-title-wrapper p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cards-scroller {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 10px 40px 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.cards-scroller::-webkit-scrollbar { display: none; }
+
+/* 3. DESIGN DO CARTÃO (TICKET STYLE) */
+.messi-card {
+    flex: 0 0 220px; /* Largura fixa do cartão */
+    background: #1a1b1e;
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.messi-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+/* Cabeçalho Data (O quadrado colorido no topo) */
+.card-header-date {
+    background: #eef2f6; /* Fundo claro padrao */
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    line-height: 1;
+}
+/* No dark mode ou padrão, vamos usar a cor rosa/azul da referencia */
+.messi-card .card-header-date {
+    background: var(--primary); /* Azul Grêmio */
+    color: white;
+}
+.highlight-card .card-header-date {
+    background: var(--accent); /* Ciano Neon para destaques */
+    color: black;
+}
+
+.month { font-size: 1.2rem; display: block; margin-bottom: 5px; }
+.year { font-size: 0.8rem; opacity: 0.8; }
+
+/* Corpo do Cartão */
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #222, #111);
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.gold { background: rgba(255, 215, 0, 0.2); color: #ffcc00; border: 1px solid #ffcc00; }
+.blue { background: rgba(0, 234, 255, 0.2); color: #00eaff; border: 1px solid #00eaff; }
+
+.messi-card h3 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    height: 40px; /* Altura fixa p/ alinhar */
+    display: flex; align-items: center; justify-content: center;
+}
+
+.match-details {
+    margin-bottom: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 0;
+    width: 100%;
+}
+
+.score { font-size: 1.5rem; font-weight: 900; color: white; }
+.score.big { font-size: 2.5rem; color: var(--accent); }
+.team-name { font-size: 0.8rem; color: #aaa; text-transform: uppercase; }
+
+.card-footer {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .trophies-container {
+        flex-direction: column;
+    }
+    .trophy-hero-image {
+        max-width: 250px; /* Imagem menor no celular */
+        margin-bottom: 20px;
+    }
+    .hero-img-effect {
+        transform: rotate(0deg); /* Remove rotação no celular */
+    }
+}
