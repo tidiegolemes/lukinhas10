@@ -118,70 +118,173 @@
         </div>
     </section>
 
-    <section class="season-stats">
-        <div class="container">
-            <h2>Números Recentes</h2>
-            <div class="stats-grid-circles">
-                <div class="circle-card">
-                    <span class="number">6</span>
-                    <span class="label">Títulos</span>
-                </div>
-                <div class="circle-card">
-                    <span class="number">23</span>
-                    <span class="label">Gols Oficiais</span>
-                </div>
-                <div class="circle-card">
-                    <span class="number">2</span>
-                    <span class="label">Vices</span>
+    <section class="messi-stats-section">
+        <div class="stats-overlay"></div>
+        <div class="stats-bg-image" style="background-image: url('perfillukinhas10.jpg');"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="messi-header">
+                <h2>LUKAS <span class="highlight">STATS</span></h2>
+                
+                <div class="stats-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'total')">TOTAL</button>
+                    <button class="tab-btn" onclick="openTab(event, 'gremio')">GRÊMIO</button>
+                    <button class="tab-btn" onclick="openTab(event, 'real')">REAL GAÚCHO</button>
+                    <button class="tab-btn" onclick="openTab(event, 'outros')">OUTROS</button>
                 </div>
             </div>
+
+            <div id="total" class="tab-content active-content">
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>GOLS OFICIAIS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar red-bar" style="width: 85%;"></div>
+                            <span class="bar-value">34</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>TÍTULOS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar green-bar" style="width: 70%;"></div>
+                            <span class="bar-value">8</span>
+                        </div>
+                        <p class="sub-stat">Incluindo Tri New Cup & IberLeague</p>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>VICES / PÓDIOS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar blue-bar" style="width: 30%;"></div>
+                            <span class="bar-value">3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>TORNEIOS DISPUTADOS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar purple-bar" style="width: 90%;"></div>
+                            <span class="bar-value">12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gremio" class="tab-content">
+                <div class="club-header">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Gr%C3%AAmio_Foot-Ball_Porto_Alegrense_logo.svg/1200px-Gr%C3%AAmio_Foot-Ball_Porto_Alegrense_logo.svg.png" alt="Grêmio" class="club-logo-mini">
+                    <p>Categoria Sub-8 (Campo) • 2024-Atual</p>
+                </div>
+                
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>GOLS (GRÊMIO)</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar red-bar" style="width: 60%;"></div>
+                            <span class="bar-value">12</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>TÍTULOS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar green-bar" style="width: 50%;"></div>
+                            <span class="bar-value">4</span>
+                        </div>
+                        <p class="sub-stat">New Cup, LINF, IberLeague</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="real" class="tab-content">
+                <div class="club-header">
+                    <span style="font-size: 2rem;">⚽</span>
+                    <p>Futsal Competição • 2024-Atual</p>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>GOLS (FUTSAL)</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar red-bar" style="width: 40%;"></div>
+                            <span class="bar-value">8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>ASSISTÊNCIAS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar blue-bar" style="width: 55%;"></div>
+                            <span class="bar-value">15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="outros" class="tab-content">
+                 <div class="club-header">
+                    <p>Flamengo, Juventude & Escolinhas</p>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>GOLS (INICIAÇÃO)</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar red-bar" style="width: 50%;"></div>
+                            <span class="bar-value">14</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <h3>PREMIAÇÕES INDIVIDUAIS</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar yellow-bar" style="width: 40%;"></div>
+                            <span class="bar-value">2</span>
+                        </div>
+                        <p class="sub-stat">Goleador Copa Sortica</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="career-table-section">
-        <div class="container">
-            <h2>Histórico de Clubes</h2>
-            <table class="career-table">
-                <thead>
-                    <tr>
-                        <th>Período</th>
-                        <th>Clube / Escola</th>
-                        <th>Modalidade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024-Atual</td>
-                        <td>
-                            <a href="https://www.instagram.com/escoladogremio/" target="_blank" class="table-link">
-                                <strong>Grêmio FBPA</strong> ↗
-                            </a>
-                        </td>
-                        <td>Campo (Base)</td>
-                    </tr>
-                    <tr>
-                        <td>2024-Atual</td>
-                        <td>
-                            <a href="https://www.instagram.com/realgauchofutsal/" target="_blank" class="table-link">
-                                <strong>Real Gaúcho</strong> ↗
-                            </a>
-                        </td>
-                        <td>Futsal</td>
-                    </tr>
-                    <tr>
-                        <td>2023</td>
-                        <td>Juventude (Gravataí)</td>
-                        <td>Empréstimo</td>
-                    </tr>
-                    <tr>
-                        <td>2022</td>
-                        <td>Flamengo / Rabelo</td>
-                        <td>Iniciação</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Esconde todos os conteúdos
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active-content");
+            }
+            
+            // Remove a classe 'active' de todos os botões
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Mostra o atual e adiciona classe
+            document.getElementById(tabName).style.display = "block";
+            // Pequeno delay para animação CSS funcionar
+            setTimeout(() => {
+                document.getElementById(tabName).classList.add("active-content");
+            }, 10);
+            
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
     <section class="trophies-section">
         <div class="container">
