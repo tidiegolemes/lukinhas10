@@ -213,31 +213,38 @@
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script>
-    // Script do Modo Escuro/Claro
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Verificar se o usuário já tem preferência salva
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
-        toggleBtn.textContent = '☀️';
+    // Função para aplicar tema
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            body.classList.add('light-mode');
+            toggleBtn.innerHTML = '☀️'; // Sol
+        } else {
+            body.classList.remove('light-mode');
+            toggleBtn.innerHTML = '🌙'; // Lua
+        }
     }
 
+    // Verificar preferência salva
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+
+    // Evento de clique
     toggleBtn.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        
-        // Salvar preferência e mudar ícone
         if (body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-            toggleBtn.textContent = '☀️';
-        } else {
+            applyTheme('dark');
             localStorage.setItem('theme', 'dark');
-            toggleBtn.textContent = '🌙';
+        } else {
+            applyTheme('light');
+            localStorage.setItem('theme', 'light');
         }
     });
 
-    // Atualiza o ano automaticamente no rodapé
+    // Ano automático
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
