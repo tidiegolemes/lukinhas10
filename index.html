@@ -41,7 +41,7 @@
     </script>
 </head>
 <body>
-
+<button class="theme-switch" id="themeToggle" title="Mudar Tema">🌙</button>
     <header class="hero">
         <div class="container">
             <div class="profile-frame">
@@ -212,5 +212,33 @@
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script>
+    // Script do Modo Escuro/Claro
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Verificar se o usuário já tem preferência salva
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        // Salvar preferência e mudar ícone
+        if (body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '☀️';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '🌙';
+        }
+    });
+
+    // Atualiza o ano automaticamente no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
