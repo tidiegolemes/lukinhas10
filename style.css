@@ -374,3 +374,152 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
 }
+/* --- FICHA TÉCNICA DINÂMICA (ESTILO MESSI) --- */
+.stats-dynamic {
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden; /* Para a imagem não vazar se for muito grande */
+}
+
+.ficha-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente imagem e dados */
+    gap: 40px;
+    position: relative;
+}
+
+/* -- A Imagem Lateral de Destaque -- */
+.athlete-image-feature {
+    flex: 1; /* Ocupa uma parte do espaço */
+    max-width: 400px; /* Limite de largura para não ficar gigante */
+    position: relative;
+    z-index: 2; /* Fica "na frente" do fundo dos blocos de dados */
+}
+
+.action-shot {
+    width: 100%;
+    height: auto;
+    /* Estilo temporário para a foto quadrada atual parecer mais dinâmica */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transform: perspective(1000px) rotateY(10deg) translateX(20px); /* Leve rotação 3D */
+    transition: 0.5s;
+    /* Quando tiver a foto recortada (PNG), remova o border-radius e o box-shadow para ficar mais natural */
+}
+
+.ficha-container:hover .action-shot {
+    transform: perspective(1000px) rotateY(0deg) translateX(0); /* Efeito ao passar o mouse */
+}
+
+/* -- Estrutura dos Dados -- */
+.athlete-data-structure {
+    flex: 1.5; /* Ocupa mais espaço que a imagem */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaço entre os dois blocos principais */
+    z-index: 1;
+}
+
+/* O Bloco de Dados em si */
+.data-block {
+    background: var(--bg-card);
+    backdrop-filter: blur(15px);
+    border: var(--border);
+    border-radius: 16px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa os dois itens dentro do bloco */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Faixa colorida lateral (igual aos blocos rosa/cinza do Messi) */
+.data-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+}
+.blue-accent::before { background: var(--primary); box-shadow: 0 0 15px var(--primary); }
+.cyan-accent::before { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+
+/* Divisor vertical entre os dados */
+.data-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Conteúdo interno dos dados */
+.data-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; /* Garante que ocupem espaço igual */
+}
+
+.data-icon {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.data-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.data-value {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--text-main);
+    display: block;
+    line-height: 1.1;
+}
+
+/* Destaque Neon para a perna esquerda */
+.highlight-neon {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+}
+
+/* --- RESPONSIVO (CELULAR) --- */
+@media (max-width: 768px) {
+    .ficha-container {
+        flex-direction: column; /* Empilha imagem em cima dos dados */
+        gap: 30px;
+    }
+    
+    .athlete-image-feature {
+        max-width: 80%; /* Imagem um pouco menor no celular */
+        margin: 0 auto;
+    }
+    .action-shot {
+        transform: none; /* Remove efeito 3D no celular para simplificar */
+    }
+
+    .data-block {
+        flex-direction: column; /* Empilha os dados dentro do bloco */
+        gap: 20px;
+        padding: 25px;
+        text-align: center;
+    }
+    
+    .data-divider {
+        width: 100%; /* Divisor vira horizontal */
+        height: 1px;
+    }
+    
+    .data-group {
+        flex-direction: column; /* Ícone em cima do texto */
+        gap: 10px;
+    }
+}
