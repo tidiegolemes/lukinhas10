@@ -298,3 +298,99 @@ footer {
     font-size: 0.85rem;
 }
 footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
+/* --- GALERIA ESTILO REELS (CARROSSEL) --- */
+.reels-section {
+    padding: 60px 0;
+    overflow: hidden; /* Evita que a página fique larga demais */
+}
+
+.reels-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Permite rolar para o lado */
+    padding: 20px 10px 50px 10px; /* Espaço embaixo para sombra */
+    
+    /* Efeito magnético ao rolar (Snap) */
+    scroll-snap-type: x mandatory;
+    
+    /* Esconder barra de rolagem (Fica mais limpo) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+}
+
+.reels-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.reel-item {
+    min-width: 280px; /* Largura estilo celular */
+    height: 500px;    /* Altura vertical */
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    background-color: #1a1a1a;
+}
+
+/* Efeito ao passar o mouse no Card */
+.reel-item:hover {
+    transform: translateY(-10px);
+    border-color: #00eaff; /* Azul Neon (Grêmio) */
+    box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2);
+}
+
+/* A Imagem de Fundo */
+.reel-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Zoom suave */
+}
+
+/* Efeito de Zoom na Imagem ao passar o mouse */
+.reel-item:hover .reel-img {
+    transform: scale(1.1);
+}
+
+/* O Texto/Overlay estilo Instagram */
+.reel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Gradiente ocupa metade de baixo */
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.reel-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.reel-overlay h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.reel-overlay p {
+    font-size: 0.9rem;
+    margin: 8px 0 0 0;
+    opacity: 0.9;
+    color: #ddd;
+}
