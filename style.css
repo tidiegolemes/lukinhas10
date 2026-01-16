@@ -10,6 +10,7 @@
     --border: 1px solid rgba(255, 255, 255, 0.1);
     --glow: 0 0 20px rgba(59, 130, 246, 0.3); /* Brilho azul */
     --gradient-text: linear-gradient(to right, #ffffff, #94a3b8);
+    --btn-social-bg: rgba(255, 255, 255, 0.05);
 }
 
 /* --- PALETA LIGHT (MODO DIA) --- */
@@ -23,6 +24,7 @@
     --border: 1px solid rgba(0, 0, 0, 0.05);
     --glow: 0 4px 20px rgba(0, 0, 0, 0.05);
     --gradient-text: linear-gradient(to right, #0d80bf, #1e293b);
+    --btn-social-bg: rgba(0, 0, 0, 0.05); /* Escuro para aparecer no fundo claro */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.4s ease, color 0.3s ease, border-color 0.3s; }
@@ -75,10 +77,10 @@ body {
     justify-content: center;
 }
 
-/* --- HERO SECTION (IMPACTO) --- */
+/* --- HERO SECTION --- */
 .hero {
     text-align: center;
-    padding: 60px 0 40px;
+    padding: 60px 0 20px;
 }
 
 .profile-frame {
@@ -94,7 +96,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--bg-body);
-    box-shadow: 0 0 0 4px var(--primary), var(--glow); /* Dupla Borda Brilhante */
+    box-shadow: 0 0 0 4px var(--primary), var(--glow);
 }
 
 .verified-badge {
@@ -121,7 +123,7 @@ h1 {
     margin: 0;
     background: var(--gradient-text);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Texto Gradiente */
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
@@ -135,47 +137,49 @@ h1 {
 
 .bio-text { color: var(--text-muted); font-size: 0.95rem; max-width: 90%; margin: 0 auto; }
 
-/* --- BOTÕES "GAME MENU" --- */
-.quick-links { margin-bottom: 40px; }
+/* --- BARRA SOCIAL TOPO (MODERNA) --- */
+.social-top-bar {
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
 
-.btn {
+.social-flex {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--btn-social-bg); /* Adaptável ao tema */
+    backdrop-filter: blur(5px);
+    border: var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 12px;
+    font-size: 1.4rem;
+    color: var(--text-main);
     text-decoration: none;
-    font-weight: 800;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transform: perspective(1px) translateZ(0);
-    transition: transform 0.3s;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.btn:active { transform: scale(0.97); }
-
-.btn::after { /* Efeito de brilho passando */
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: 0.5s;
+/* Efeito Hover (Cores da Marca) */
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: #fff !important; /* Sempre branco no hover */
+    border-color: transparent;
 }
-.btn:hover::after { left: 100%; }
 
-.btn-youtube { background: #ff0000; color: white; border: 1px solid #cc0000; }
-.btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
-.btn-tiktok { background: #000; color: white; border: 1px solid #333; }
-.btn-whatsapp { background: #25D366; color: white; }
+.youtube:hover { background: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 0 20px rgba(220, 39, 67, 0.6); }
+.tiktok:hover { background: #000; border: 1px solid #00f2ea; box-shadow: 0 0 20px rgba(0, 242, 234, 0.4); color: #ff0050; }
+.whatsapp:hover { background: #25d366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); }
 
-/* --- CARDS & ESTATÍSTICAS (GLASSMORPHISM) --- */
+/* --- CARDS & ESTATÍSTICAS --- */
 h2 {
     font-size: 1.2rem;
     color: var(--text-main);
@@ -198,15 +202,13 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 
 .stat-card, .circle-card {
     background: var(--bg-card);
-    backdrop-filter: blur(12px); /* O VIDRO */
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: var(--border);
     border-radius: 16px;
     padding: 20px;
     text-align: center;
 }
 
-/* Ajuste específico para garantir contraste nos textos dos cards */
 .stat-card .label, .circle-card .label {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -219,17 +221,12 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 .stat-card .value, .circle-card .number {
     font-size: 1.5rem;
     font-weight: 900;
-    color: var(--text-main); /* Garante visibilidade no light mode */
+    color: var(--text-main);
 }
-
 .stat-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+.circle-card { border-bottom: 3px solid var(--accent); padding: 15px 5px; }
 
-.circle-card {
-    border-bottom: 3px solid var(--accent);
-    padding: 15px 5px;
-}
-
-/* --- TABELAS & LISTAS (BUNKER STYLE) --- */
+/* --- TABELAS & LISTAS --- */
 .career-table, .trophy-item {
     background: var(--bg-card);
     backdrop-filter: blur(10px);
@@ -238,7 +235,7 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
     width: 100%;
     overflow: hidden;
     margin-bottom: 15px;
-    color: var(--text-main); /* Correção do sumiço */
+    color: var(--text-main);
 }
 
 .career-table { border-collapse: separate; border-spacing: 0; width: 100%; }
@@ -255,9 +252,8 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
     border-top: 1px solid rgba(255,255,255,0.05);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--text-main); /* Força contraste */
 }
-.light-mode .career-table td { border-top: 1px solid #eee; } /* Borda sutil no claro */
+.light-mode .career-table td { border-top: 1px solid #eee; }
 
 .trophy-item {
     display: flex;
@@ -268,6 +264,25 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 .trophy-icon { font-size: 2rem; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255,215,0,0.5)); }
 .trophy-info strong { display: block; font-size: 1.1rem; color: var(--text-main); }
 .trophy-info span { font-size: 0.85rem; color: var(--text-muted); }
+
+/* --- LINKS --- */
+.table-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary);
+    transition: 0.3s;
+}
+.table-link:hover { color: var(--primary); }
+
+.trophy-link {
+    font-size: 0.7rem;
+    color: var(--primary);
+    text-decoration: none;
+    display: block;
+    margin: 2px 0;
+    opacity: 0.8;
+}
+.trophy-link:hover { opacity: 1; text-decoration: underline; }
 
 /* --- TIMELINE --- */
 .timeline { list-style: none; padding-left: 10px; text-align: left; }
@@ -288,8 +303,52 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 }
 .timeline .year { color: var(--accent); font-weight: 800; }
 .timeline h3 { color: var(--text-main); margin: 5px 0; }
+.timeline p { color: var(--text-muted); font-size: 0.9rem; }
 
-/* --- FOOTER --- */
+/* --- GALERIA REELS --- */
+.reels-section { padding: 60px 0; overflow: hidden; }
+.reels-container {
+    display: flex; gap: 20px; overflow-x: auto;
+    padding: 20px 10px 50px 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.reels-container::-webkit-scrollbar { display: none; }
+
+.reel-item {
+    min-width: 280px; height: 500px;
+    border-radius: 20px; position: relative; overflow: hidden;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; background-color: #1a1a1a;
+}
+.reel-item:hover {
+    transform: translateY(-10px);
+    border-color: #00eaff;
+    box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2);
+}
+.reel-img {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reel-item:hover .reel-img { transform: scale(1.1); }
+
+.reel-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    color: white;
+    display: flex; flex-direction: column; justify-content: flex-end;
+}
+.reel-icon { font-size: 1.4rem; margin-bottom: 10px; color: #00eaff; text-shadow: 0 0 10px rgba(0, 234, 255, 0.5); }
+.reel-overlay h3 { font-size: 1.5rem; margin: 0; font-weight: 800; text-transform: uppercase; line-height: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+.reel-overlay p { font-size: 0.9rem; margin: 8px 0 0 0; opacity: 0.9; color: #ddd; }
+
+/* --- FOOTER & SELO --- */
 footer {
     border-top: var(--border);
     margin-top: 50px;
@@ -297,207 +356,21 @@ footer {
     color: var(--text-muted);
     font-size: 0.85rem;
 }
-footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
-/* --- GALERIA ESTILO REELS (CARROSSEL) --- */
-.reels-section {
-    padding: 60px 0;
-    overflow: hidden; /* Evita que a página fique larga demais */
-}
-
-.reels-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Permite rolar para o lado */
-    padding: 20px 10px 50px 10px; /* Espaço embaixo para sombra */
-    
-    /* Efeito magnético ao rolar (Snap) */
-    scroll-snap-type: x mandatory;
-    
-    /* Esconder barra de rolagem (Fica mais limpo) */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE */
-}
-
-.reels-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-}
-
-.reel-item {
-    min-width: 280px; /* Largura estilo celular */
-    height: 500px;    /* Altura vertical */
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    scroll-snap-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-    background-color: #1a1a1a;
-}
-
-/* Efeito ao passar o mouse no Card */
-.reel-item:hover {
-    transform: translateY(-10px);
-    border-color: #00eaff; /* Azul Neon (Grêmio) */
-    box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2);
-}
-
-/* A Imagem de Fundo */
-.reel-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Zoom suave */
-}
-
-/* Efeito de Zoom na Imagem ao passar o mouse */
-.reel-item:hover .reel-img {
-    transform: scale(1.1);
-}
-
-/* O Texto/Overlay estilo Instagram */
-.reel-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%; /* Gradiente ocupa metade de baixo */
-    padding: 25px;
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.reel-icon {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #00eaff;
-    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
-}
-
-.reel-overlay h3 {
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.reel-overlay p {
-    font-size: 0.9rem;
-    margin: 8px 0 0 0;
-    opacity: 0.9;
-    color: #ddd;
-}
-/* Links dentro da Tabela e Troféus */
-.table-link {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px dotted var(--primary);
-    transition: 0.3s;
-}
-.table-link:hover { color: var(--primary); }
-
-.trophy-link {
-    font-size: 0.7rem;
-    color: var(--primary);
-    text-decoration: none;
-    display: block; /* Fica numa linha separada */
-    margin: 2px 0;
-    opacity: 0.8;
-}
-.trophy-link:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-/* --- SELO DA AGÊNCIA (RODAPÉ) --- */
 .managed-by {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 20px; padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #888;
+    font-size: 0.85rem; color: #888;
 }
-
 .agency-link {
-    display: inline-block;
-    margin-top: 5px;
-    color: #00ff88; /* Verde Neon da Agência */
-    text-decoration: none;
-    font-weight: 700;
+    display: inline-block; margin-top: 5px;
+    color: #00ff88; text-decoration: none; font-weight: 700;
     transition: 0.3s;
     background: rgba(0, 255, 136, 0.1);
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 8px 15px; border-radius: 20px;
     border: 1px solid rgba(0, 255, 136, 0.2);
 }
-
 .agency-link:hover {
-    background: #00ff88;
-    color: #000;
+    background: #00ff88; color: #000;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
-}
-/* --- BARRA SOCIAL TOPO (MODERNA) --- */
-.social-top-bar {
-    padding: 20px 0;
-    position: relative;
-    z-index: 10;
-}
-
-.social-flex {
-    display: flex;
-    justify-content: center; /* Alinha no centro horizontalmente */
-    gap: 25px; /* Espaço entre os ícones */
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* Faz ficar redondo */
-    background: rgba(255, 255, 255, 0.05); /* Fundo vidro escuro */
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Efeito Hover (Mouse em cima) - Cada um com sua cor */
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1); /* Sobe e aumenta */
-    color: #fff;
-    border-color: transparent;
-}
-
-.youtube:hover {
-    background: #ff0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-}
-
-.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    box-shadow: 0 0 20px rgba(220, 39, 67, 0.6);
-}
-
-.tiktok:hover {
-    background: #000;
-    border: 1px solid #00f2ea;
-    box-shadow: 0 0 20px rgba(0, 242, 234, 0.4);
-    color: #ff0050;
-}
-
-.whatsapp:hover {
-    background: #25d366;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
 }
