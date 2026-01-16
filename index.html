@@ -56,16 +56,18 @@
     </script>
 </head>
 <body>
-<button class="theme-switch" id="themeToggle" title="Mudar Tema">🌙</button>
+
+    <button class="theme-switch" id="themeToggle" title="Mudar Tema">🌙</button>
+
     <header class="hero">
         <div class="container">
             <div class="profile-frame">
-                <img src="perfillukinhas10.jpg" alt="Lukas Atleta Grêmio" class="profile-pic">
+                <img src="perfillukinhas10.jpeg" alt="Lukas Atleta Grêmio" class="profile-pic">
                 <span class="verified-badge">✓</span>
             </div>
             <h1>LUKAS <span class="highlight">10</span></h1>
-            <p class="subtitle">Atleta Sub-7 | Grêmio FBPA 🇪🇪</p>
-            <p class="bio-text">Meio-campo destro. Focado, disciplinado e apaixonado por futebol. Monitorado por pais e assessoria.</p>
+            <p class="subtitle">Atleta Sub-8 | Grêmio FBPA 🇪🇪</p>
+            <p class="bio-text">Meio-campo <strong>Canhoto</strong>. Habilidoso, artilheiro e focado. Monitorado por pais e assessoria.</p>
         </div>
     </header>
 
@@ -85,18 +87,6 @@
             </a>
         </div>
     </section>
-
-    <header class="hero">
-        <div class="container">
-            <div class="profile-frame">
-                <img src="perfillukinhas10.jpeg" alt="Lukas Atleta Grêmio" class="profile-pic">
-                <span class="verified-badge">✓</span>
-            </div>
-            <h1>LUKAS <span class="highlight">10</span></h1>
-            <p class="subtitle">Atleta Sub-8 | Grêmio FBPA 🇪🇪</p>
-            <p class="bio-text">Meio-campo <strong>Canhoto</strong>. Habilidoso, artilheiro e focado. Monitorado por pais e assessoria.</p>
-        </div>
-    </header>
 
     <section class="stats">
         <div class="container">
@@ -214,7 +204,9 @@
                     </div>
                 </div>
 
-                <div class="trophy-item" style="border-left-color: var(--gold);"> <span class="trophy-icon">⚽</span> <div class="trophy-info">
+                <div class="trophy-item" style="border-left-color: var(--gold);"> 
+                    <span class="trophy-icon">⚽</span> 
+                    <div class="trophy-info">
                         <strong>Campeão Copa Sortica</strong>
                         <span style="color: var(--accent); font-weight:bold;">★ Goleador da Competição (6 Gols)</span>
                     </div>
@@ -324,9 +316,6 @@
     </footer>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script>
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
 
@@ -360,6 +349,6 @@
 
     // Ano automático
     document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    </script>
 </body>
 </html>
