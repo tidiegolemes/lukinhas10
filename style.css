@@ -415,3 +415,31 @@ footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
     opacity: 1;
     text-decoration: underline;
 }
+/* --- SELO DA AGÊNCIA (RODAPÉ) --- */
+.managed-by {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.agency-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #00ff88; /* Verde Neon da Agência */
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.agency-link:hover {
+    background: #00ff88;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
