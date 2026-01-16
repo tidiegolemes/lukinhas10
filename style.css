@@ -1,3 +1,4 @@
+/* --- CONFIGURAÇÕES GERAIS E CORES --- */
 :root {
     /* --- PALETA DARK (FIFA PRIME) --- */
     --bg-body: #090a0c;       /* Preto Profundo */
@@ -24,7 +25,7 @@
     --border: 1px solid rgba(0, 0, 0, 0.05);
     --glow: 0 4px 20px rgba(0, 0, 0, 0.05);
     --gradient-text: linear-gradient(to right, #0d80bf, #1e293b);
-    --btn-social-bg: rgba(0, 0, 0, 0.05); /* Escuro para aparecer no fundo claro */
+    --btn-social-bg: rgba(0, 0, 0, 0.05);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.4s ease, color 0.3s ease, border-color 0.3s; }
@@ -34,272 +35,104 @@ body {
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem lateral indesejada */
     background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1200px; /* Aumentei a largura máxima para dar respiro no PC */
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
     position: relative;
     z-index: 2;
 }
 
-/* --- ANIMAÇÕES (ENTRADA ESTILO APP) --- */
+/* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.hero, .quick-links, .stats, .season-stats, .career-table-section, .trophies-section, .timeline-section {
+.hero, .quick-links, .stats-dynamic, .messi-stats-section, .career-table-section, .trophies-dynamic-section, .timeline-section {
     animation: fadeInUp 0.8s ease forwards;
 }
 
 /* --- BOTÃO TEMA FLUTUANTE --- */
 .theme-switch {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--bg-card);
-    border: var(--border);
-    backdrop-filter: blur(10px);
-    color: var(--text-main);
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: var(--glow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed; top: 25px; right: 25px; width: 50px; height: 50px;
+    border-radius: 50%; background: var(--bg-card); border: var(--border);
+    backdrop-filter: blur(10px); color: var(--text-main); font-size: 1.5rem;
+    cursor: pointer; z-index: 999; box-shadow: var(--glow);
+    display: flex; align-items: center; justify-content: center;
 }
 
 /* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 60px 0 20px;
-}
+.hero { text-align: center; padding: 60px 0 20px; }
 
 .profile-frame {
-    position: relative;
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 25px;
+    position: relative; width: 170px; height: 170px; margin: 0 auto 25px;
 }
 
 .profile-pic {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
     border: 4px solid var(--bg-body);
     box-shadow: 0 0 0 4px var(--primary), var(--glow);
 }
 
 .verified-badge {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: var(--primary);
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    border: 3px solid var(--bg-body);
+    position: absolute; bottom: 5px; right: 5px;
+    background: var(--primary); color: white; width: 32px; height: 32px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: bold; border: 3px solid var(--bg-body);
 }
 
 h1 {
-    font-weight: 900;
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    margin: 0;
+    font-weight: 900; font-size: 3rem; text-transform: uppercase;
+    letter-spacing: -2px; margin: 0;
     background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 0.9rem;
-    color: var(--primary);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    font-size: 0.9rem; color: var(--primary); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;
 }
 
-.bio-text { color: var(--text-muted); font-size: 0.95rem; max-width: 90%; margin: 0 auto; }
+.bio-text { color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
 
-/* --- BARRA SOCIAL TOPO (MODERNA) --- */
-.social-top-bar {
-    padding: 20px 0;
-    position: relative;
-    z-index: 10;
-}
-
-.social-flex {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
+/* --- BARRA SOCIAL TOPO --- */
+.social-top-bar { padding: 20px 0; position: relative; z-index: 10; }
+.social-flex { display: flex; justify-content: center; gap: 25px; }
 
 .social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--btn-social-bg); /* Adaptável ao tema */
-    backdrop-filter: blur(5px);
-    border: var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: var(--text-main);
-    text-decoration: none;
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--btn-social-bg); backdrop-filter: blur(5px);
+    border: var(--border); display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--text-main); text-decoration: none;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Efeito Hover (Cores da Marca) */
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    color: #fff !important; /* Sempre branco no hover */
-    border-color: transparent;
-}
-
+.social-icon:hover { transform: translateY(-5px) scale(1.1); color: #fff !important; border-color: transparent; }
 .youtube:hover { background: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
 .instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 0 20px rgba(220, 39, 67, 0.6); }
 .tiktok:hover { background: #000; border: 1px solid #00f2ea; box-shadow: 0 0 20px rgba(0, 242, 234, 0.4); color: #ff0050; }
 .whatsapp:hover { background: #25d366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); }
 
-/* --- CARDS & ESTATÍSTICAS --- */
-h2 {
-    font-size: 1.2rem;
-    color: var(--text-main);
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-h2::before { content: ''; display: block; width: 6px; height: 25px; background: var(--primary); border-radius: 4px; }
-
-.stats-grid, .stats-grid-circles {
-    display: grid;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-.stats-grid { grid-template-columns: 1fr 1fr; }
-.stats-grid-circles { grid-template-columns: repeat(3, 1fr); }
-
-.stat-card, .circle-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    border: var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-}
-
-.stat-card .label, .circle-card .label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 700;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.stat-card .value, .circle-card .number {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--text-main);
-}
-.stat-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
-.circle-card { border-bottom: 3px solid var(--accent); padding: 15px 5px; }
-
-/* --- TABELAS & LISTAS --- */
-.career-table, .trophy-item {
-    background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    border: var(--border);
-    border-radius: 16px;
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 15px;
-    color: var(--text-main);
-}
-
-.career-table { border-collapse: separate; border-spacing: 0; width: 100%; }
-.career-table th {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary);
-    padding: 15px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    text-align: left;
-}
-.career-table td {
-    padding: 15px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-.light-mode .career-table td { border-top: 1px solid #eee; }
-
-.trophy-item {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-left: 5px solid var(--gold);
-}
-.trophy-icon { font-size: 2rem; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255,215,0,0.5)); }
-.trophy-info strong { display: block; font-size: 1.1rem; color: var(--text-main); }
-.trophy-info span { font-size: 0.85rem; color: var(--text-muted); }
-
 /* --- LINKS --- */
-.table-link {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px dotted var(--primary);
-    transition: 0.3s;
-}
+.table-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--primary); transition: 0.3s; }
 .table-link:hover { color: var(--primary); }
 
-.trophy-link {
-    font-size: 0.7rem;
-    color: var(--primary);
-    text-decoration: none;
-    display: block;
-    margin: 2px 0;
-    opacity: 0.8;
-}
+.trophy-link { font-size: 0.7rem; color: var(--primary); text-decoration: none; display: block; margin: 2px 0; opacity: 0.8; }
 .trophy-link:hover { opacity: 1; text-decoration: underline; }
 
 /* --- TIMELINE --- */
-.timeline { list-style: none; padding-left: 10px; text-align: left; }
-.timeline li {
-    border-left: 2px solid var(--border);
-    padding-left: 25px;
-    padding-bottom: 40px;
-    position: relative;
-}
+.timeline { list-style: none; padding-left: 10px; text-align: left; max-width: 800px; margin: 0 auto; }
+.timeline li { border-left: 2px solid var(--border); padding-left: 25px; padding-bottom: 40px; position: relative; }
 .timeline li:last-child { border-color: transparent; }
 .timeline li::before {
-    content: '';
-    position: absolute; left: -6px; top: 0;
-    width: 10px; height: 10px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent);
+    content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px;
+    background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);
 }
 .timeline .year { color: var(--accent); font-weight: 800; }
 .timeline h3 { color: var(--text-main); margin: 5px 0; }
@@ -308,40 +141,24 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 /* --- GALERIA REELS --- */
 .reels-section { padding: 60px 0; overflow: hidden; }
 .reels-container {
-    display: flex; gap: 20px; overflow-x: auto;
-    padding: 20px 10px 50px 10px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: flex; gap: 20px; overflow-x: auto; padding: 20px 10px 50px 10px;
+    scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;
 }
 .reels-container::-webkit-scrollbar { display: none; }
 
 .reel-item {
-    min-width: 280px; height: 500px;
-    border-radius: 20px; position: relative; overflow: hidden;
-    scroll-snap-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    min-width: 280px; height: 500px; border-radius: 20px; position: relative;
+    overflow: hidden; scroll-snap-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease, border-color 0.3s ease;
     cursor: pointer; background-color: #1a1a1a;
 }
-.reel-item:hover {
-    transform: translateY(-10px);
-    border-color: #00eaff;
-    box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2);
-}
-.reel-img {
-    width: 100%; height: 100%;
-    background-size: cover; background-position: center;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+.reel-item:hover { transform: translateY(-10px); border-color: #00eaff; box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2); }
+.reel-img { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .reel-item:hover .reel-img { transform: scale(1.1); }
 
 .reel-overlay {
-    position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
-    padding: 25px;
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-    color: white;
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); color: white;
     display: flex; flex-direction: column; justify-content: flex-end;
 }
 .reel-icon { font-size: 1.4rem; margin-bottom: 10px; color: #00eaff; text-shadow: 0 0 10px rgba(0, 234, 255, 0.5); }
@@ -349,463 +166,174 @@ h2::before { content: ''; display: block; width: 6px; height: 25px; background: 
 .reel-overlay p { font-size: 0.9rem; margin: 8px 0 0 0; opacity: 0.9; color: #ddd; }
 
 /* --- FOOTER & SELO --- */
-footer {
-    border-top: var(--border);
-    margin-top: 50px;
-    padding: 40px 0;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-.managed-by {
-    margin-top: 20px; padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem; color: #888;
-}
+footer { border-top: var(--border); margin-top: 50px; padding: 40px 0; color: var(--text-muted); font-size: 0.85rem; text-align: center;}
+.managed-by { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #888; }
 .agency-link {
-    display: inline-block; margin-top: 5px;
-    color: #00ff88; text-decoration: none; font-weight: 700;
-    transition: 0.3s;
-    background: rgba(0, 255, 136, 0.1);
-    padding: 8px 15px; border-radius: 20px;
+    display: inline-block; margin-top: 5px; color: #00ff88; text-decoration: none; font-weight: 700;
+    transition: 0.3s; background: rgba(0, 255, 136, 0.1); padding: 8px 15px; border-radius: 20px;
     border: 1px solid rgba(0, 255, 136, 0.2);
 }
-.agency-link:hover {
-    background: #00ff88; color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+.agency-link:hover { background: #00ff88; color: #000; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2); }
+
+/* --- ESTATÍSTICAS ESTILO MESSI (COM ABAS) --- */
+.messi-stats-section {
+    position: relative; padding: 80px 0; overflow: hidden; color: white; min-height: 600px;
 }
+.stats-bg-image {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    filter: blur(8px) brightness(0.3); transform: scale(1.1); z-index: 0;
+}
+.messi-header { text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+.messi-header h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; margin-bottom: 20px; }
+
+.stats-tabs { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 5px; }
+.tab-btn {
+    background: transparent; border: none; color: rgba(255,255,255,0.5);
+    font-size: 1rem; font-weight: 700; text-transform: uppercase; padding: 10px 0;
+    cursor: pointer; position: relative; transition: 0.3s; font-family: 'Montserrat', sans-serif; white-space: nowrap;
+}
+.tab-btn:hover { color: white; }
+.tab-btn.active { color: var(--accent); }
+.tab-btn.active::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px;
+    background: var(--accent); box-shadow: 0 0 10px var(--accent);
+}
+
+.tab-content { display: none; animation: fadeEffect 0.5s; }
+.tab-content.active-content { display: block; }
+@keyframes fadeEffect { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+
+.club-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; }
+.club-logo-mini { height: 40px; width: auto; }
+
+.stat-row { margin-bottom: 25px; }
+.stat-info h3 { font-size: 0.9rem; color: #ccc; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; text-align: right; }
+.progress-bar-container { height: 40px; background: rgba(255,255,255,0.05); border-radius: 4px; position: relative; display: flex; align-items: center; }
+.progress-bar { height: 100%; border-radius: 4px 0 0 4px; position: relative; }
+
+.red-bar { background: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+.blue-bar { background: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+.purple-bar { background: #8b5cf6; box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
+.green-bar { background: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+.yellow-bar { background: #eab308; box-shadow: 0 0 15px rgba(234, 179, 8, 0.4); }
+
+.bar-value { position: absolute; right: 15px; font-size: 1.5rem; font-weight: 900; color: white; z-index: 2; }
+.sub-stat { font-size: 0.75rem; color: #888; text-align: right; margin-top: 5px; font-style: italic; }
+
 /* --- FICHA TÉCNICA DINÂMICA (ESTILO MESSI) --- */
-.stats-dynamic {
-    padding: 60px 0;
-    position: relative;
-    overflow: hidden; /* Para a imagem não vazar se for muito grande */
-}
+.stats-dynamic { padding: 60px 0; position: relative; overflow: hidden; }
+.ficha-container { display: flex; align-items: center; gap: 40px; position: relative; flex-wrap: wrap; }
 
-.ficha-container {
-    display: flex;
-    align-items: center; /* Centraliza verticalmente imagem e dados */
-    gap: 40px;
-    position: relative;
-}
-
-/* -- A Imagem Lateral de Destaque -- */
-.athlete-image-feature {
-    flex: 1; /* Ocupa uma parte do espaço */
-    max-width: 400px; /* Limite de largura para não ficar gigante */
-    position: relative;
-    z-index: 2; /* Fica "na frente" do fundo dos blocos de dados */
-}
-
+.athlete-image-feature { flex: 1; max-width: 400px; position: relative; z-index: 2; margin: 0 auto; }
 .action-shot {
-    width: 100%;
-    height: auto;
-    /* Estilo temporário para a foto quadrada atual parecer mais dinâmica */
-    border-radius: 20px;
+    width: 100%; height: auto; border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    transform: perspective(1000px) rotateY(10deg) translateX(20px); /* Leve rotação 3D */
-    transition: 0.5s;
-    /* Quando tiver a foto recortada (PNG), remova o border-radius e o box-shadow para ficar mais natural */
+    transform: perspective(1000px) rotateY(10deg) translateX(20px); transition: 0.5s;
 }
+.ficha-container:hover .action-shot { transform: perspective(1000px) rotateY(0deg) translateX(0); }
 
-.ficha-container:hover .action-shot {
-    transform: perspective(1000px) rotateY(0deg) translateX(0); /* Efeito ao passar o mouse */
-}
+.athlete-data-structure { flex: 1.5; display: flex; flex-direction: column; gap: 25px; z-index: 1; width: 100%; }
 
-/* -- Estrutura dos Dados -- */
-.athlete-data-structure {
-    flex: 1.5; /* Ocupa mais espaço que a imagem */
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espaço entre os dois blocos principais */
-    z-index: 1;
-}
-
-/* O Bloco de Dados em si */
 .data-block {
-    background: var(--bg-card);
-    backdrop-filter: blur(15px);
-    border: var(--border);
-    border-radius: 16px;
-    padding: 25px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Separa os dois itens dentro do bloco */
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: var(--bg-card); backdrop-filter: blur(15px); border: var(--border);
+    border-radius: 16px; padding: 25px 30px; display: flex; align-items: center;
+    justify-content: space-between; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
-
-/* Faixa colorida lateral (igual aos blocos rosa/cinza do Messi) */
-.data-block::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 6px;
-    height: 100%;
-}
+.data-block::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; }
 .blue-accent::before { background: var(--primary); box-shadow: 0 0 15px var(--primary); }
 .cyan-accent::before { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
 
-/* Divisor vertical entre os dados */
-.data-divider {
-    width: 1px;
-    height: 50px;
-    background: rgba(255,255,255,0.1);
-}
+.data-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.1); }
+.data-group { display: flex; align-items: center; gap: 15px; flex: 1; }
+.data-icon { font-size: 1.8rem; color: var(--text-muted); opacity: 0.7; }
+.data-label { display: block; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; }
+.data-value { font-size: 1.4rem; font-weight: 900; color: var(--text-main); display: block; line-height: 1.1; }
+.highlight-neon { color: var(--accent); text-shadow: 0 0 10px rgba(0, 234, 255, 0.4); }
 
-/* Conteúdo interno dos dados */
-.data-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex: 1; /* Garante que ocupem espaço igual */
-}
-
-.data-icon {
-    font-size: 1.8rem;
-    color: var(--text-muted);
-    opacity: 0.7;
-}
-
-.data-label {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-.data-value {
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: var(--text-main);
-    display: block;
-    line-height: 1.1;
-}
-
-/* Destaque Neon para a perna esquerda */
-.highlight-neon {
-    color: var(--accent);
-    text-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
-}
-
-/* --- RESPONSIVO (CELULAR) --- */
-@media (max-width: 768px) {
-    .ficha-container {
-        flex-direction: column; /* Empilha imagem em cima dos dados */
-        gap: 30px;
-    }
-    
-    .athlete-image-feature {
-        max-width: 80%; /* Imagem um pouco menor no celular */
-        margin: 0 auto;
-    }
-    .action-shot {
-        transform: none; /* Remove efeito 3D no celular para simplificar */
-    }
-
-    .data-block {
-        flex-direction: column; /* Empilha os dados dentro do bloco */
-        gap: 20px;
-        padding: 25px;
-        text-align: center;
-    }
-    
-    .data-divider {
-        width: 100%; /* Divisor vira horizontal */
-        height: 1px;
-    }
-    
-    .data-group {
-        flex-direction: column; /* Ícone em cima do texto */
-        gap: 10px;
-    }
-}
-/* --- ESTATÍSTICAS ESTILO MESSI --- */
-.messi-stats-section {
-    position: relative;
-    padding: 80px 0;
-    overflow: hidden;
-    color: white;
-    min-height: 600px;
-}
-
-/* Imagem de Fundo Fixa e Escura */
-.stats-bg-image {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px) brightness(0.3); /* Desfoque e escurecimento para destacar o texto */
-    transform: scale(1.1);
-    z-index: 0;
-}
-
-.messi-header {
-    text-align: left;
-    margin-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 20px;
-}
-
-.messi-header h2 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-}
-
-/* SISTEMA DE ABAS (TABS) */
-.stats-tabs {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-}
-
-.tab-btn {
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.5);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 10px 0;
-    cursor: pointer;
-    position: relative;
-    transition: 0.3s;
-    font-family: 'Montserrat', sans-serif;
-    white-space: nowrap;
-}
-
-.tab-btn:hover { color: white; }
-
-.tab-btn.active {
-    color: var(--accent); /* Azul Neon */
-}
-
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
-}
-
-/* CONTEÚDO DAS ABAS */
-.tab-content {
-    display: none; /* Escondido por padrão */
-    animation: fadeEffect 0.5s;
-}
-.tab-content.active-content { display: block; }
-
-@keyframes fadeEffect {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-.club-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    background: rgba(255,255,255,0.05);
-    padding: 15px;
-    border-radius: 10px;
-}
-.club-logo-mini { height: 40px; width: auto; }
-
-/* BARRAS DE ESTATÍSTICA (ESTILO MESSI.COM) */
-.stat-row {
-    margin-bottom: 25px;
-}
-
-.stat-info h3 {
-    font-size: 0.9rem;
-    color: #ccc;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-align: right; /* Título alinhado à direita para ficar estiloso */
-}
-
-.progress-bar-container {
-    height: 40px; /* Barras grossas como no site do Messi */
-    background: rgba(255,255,255,0.05);
-    border-radius: 4px;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.progress-bar {
-    height: 100%;
-    border-radius: 4px 0 0 4px;
-    position: relative;
-}
-
-/* Cores das Barras (Inspirado na imagem enviada) */
-.red-bar { background: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }   /* Gols */
-.blue-bar { background: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }  /* Assistências/Vices */
-.purple-bar { background: #8b5cf6; box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); } /* Jogos */
-.green-bar { background: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }  /* Títulos */
-.yellow-bar { background: #eab308; box-shadow: 0 0 15px rgba(234, 179, 8, 0.4); }  /* Prêmios */
-
-.bar-value {
-    position: absolute;
-    right: 15px;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: white;
-    z-index: 2;
-}
-
-.sub-stat {
-    font-size: 0.75rem;
-    color: #888;
-    text-align: right;
-    margin-top: 5px;
-    font-style: italic;
-}
 /* --- TROFÉUS ESTILO MESSI (CORRIGIDO) --- */
 .trophies-dynamic-section {
-    padding: 80px 0;
-    overflow: hidden;
+    padding: 80px 0; overflow: hidden;
     background: linear-gradient(to bottom, var(--bg-body), #050505);
 }
-
 .trophies-container {
-    display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    gap: 40px; /* Espaço entre a foto e os cards */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    display: flex; align-items: center; gap: 40px; flex-wrap: wrap; /* Correção para telas pequenas */
 }
 
-/* 1. IMAGEM LATERAL (HERO) */
 .trophy-hero-image {
-    flex: 1;
-    min-width: 300px; /* Garante tamanho mínimo */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+    flex: 1; min-width: 300px; position: relative; display: flex; justify-content: center; padding: 20px;
 }
-
 .hero-img-effect {
-    width: 100%;
-    max-width: 350px; /* Limita para não ficar gigante */
-    height: auto;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.5)); /* Brilho Azul */
-    transform: rotate(-3deg); /* Leve inclinação estilosa */
-    transition: 0.5s;
-    z-index: 2;
-    border: 3px solid rgba(255,255,255,0.1);
+    width: 100%; max-width: 350px; height: auto; border-radius: 20px;
+    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.5)); transform: rotate(-3deg);
+    transition: 0.5s; z-index: 2; border: 3px solid rgba(255,255,255,0.1);
 }
-
 .trophy-hero-image::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) rotate(3deg); /* Quadrado decorativo atrás */
-    width: 100%; max-width: 350px; height: 100%;
-    border: 2px solid var(--primary);
-    border-radius: 20px;
-    z-index: 1;
-    opacity: 0.3;
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(3deg); width: 100%; max-width: 350px; height: 100%;
+    border: 2px solid var(--primary); border-radius: 20px; z-index: 1; opacity: 0.3;
 }
 
-/* 2. CARROSSEL DE CARDS (LADO DIREITO) */
-.trophy-carousel-wrapper {
-    flex: 1.5; /* Ocupa mais espaço que a imagem */
-    width: 100%; /* Garante largura total disponível */
-    overflow: hidden; 
-}
+.trophy-carousel-wrapper { flex: 1.5; width: 100%; overflow: hidden; }
 
-.section-title-wrapper {
-    margin-bottom: 30px;
-    text-align: left; /* Alinha texto à esquerda */
-}
-
+/* CORREÇÃO DO TÍTULO CORTADO */
+.section-title-wrapper { margin-bottom: 30px; text-align: left; }
 .section-title-wrapper h2 {
-    font-size: 2.5rem; /* Tamanho do título */
-    line-height: 1.1; /* Espaçamento entre linhas apertado */
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    display: block; /* Garante que o span não quebre estranho */
+    font-size: 2.2rem; /* Levemente menor para caber melhor */
+    line-height: 1.2; /* Mais espaço entre linhas */
+    margin-bottom: 10px; text-transform: uppercase;
+    display: block; width: 100%;
 }
+.section-title-wrapper h2 span { color: var(--primary); display: inline-block; }
+.section-title-wrapper p { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
 
-.section-title-wrapper h2 span {
-    color: var(--primary); /* Destaque azul */
-    display: inline-block; /* Evita quebra no meio da palavra */
-}
-
-.section-title-wrapper p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.8;
-}
-
-/* SCROLLER (ÁREA DE ROLAGEM) */
 .cards-scroller {
-    display: flex;
-    gap: 25px;
-    overflow-x: auto;
-    padding: 20px 5px 40px 5px; /* Espaço para sombra */
-    scroll-snap-type: x mandatory;
-    
-    /* Esconder barra de rolagem */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    mask-image: linear-gradient(to right, black 90%, transparent 100%); /* Fade out no final */
+    display: flex; gap: 25px; overflow-x: auto; padding: 20px 5px 40px 5px;
+    scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
 .cards-scroller::-webkit-scrollbar { display: none; }
 
-/* 3. DESIGN DO CARTÃO */
 .messi-card {
-    flex: 0 0 240px; /* Largura um pouco maior */
-    background: #151515;
-    border-radius: 16px;
-    overflow: hidden;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    transition: transform 0.3s, border-color 0.3s;
+    flex: 0 0 240px; background: #151515; border-radius: 16px; overflow: hidden;
+    scroll-snap-align: start; display: flex; flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); transition: transform 0.3s, border-color 0.3s;
     border: 1px solid rgba(255,255,255,0.08);
 }
+.messi-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2); }
 
-.messi-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
-}
+.card-header-date { background: var(--primary); color: white; padding: 15px; text-align: center; display: flex; flex-direction: column; font-weight: 800; line-height: 1; }
+.highlight-card .card-header-date { background: var(--accent); color: black; }
+.month { font-size: 1.2rem; display: block; margin-bottom: 5px; }
+.year { font-size: 0.8rem; opacity: 0.8; }
 
-/* RESPONSIVIDADE (CELULAR) */
+.card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; background: linear-gradient(to bottom, #222, #111); }
+.status-badge { font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.gold { background: rgba(255, 215, 0, 0.2); color: #ffcc00; border: 1px solid #ffcc00; }
+.blue { background: rgba(0, 234, 255, 0.2); color: #00eaff; border: 1px solid #00eaff; }
+
+.messi-card h3 { font-size: 1rem; color: white; margin-bottom: 15px; line-height: 1.3; height: 40px; display: flex; align-items: center; justify-content: center; }
+.match-details { margin-bottom: 20px; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 0; width: 100%; }
+.score { font-size: 1.5rem; font-weight: 900; color: white; }
+.score.big { font-size: 2.5rem; color: var(--accent); }
+.team-name { font-size: 0.8rem; color: #aaa; text-transform: uppercase; }
+.card-footer { font-size: 0.8rem; color: #666; margin-top: auto; display: flex; align-items: center; gap: 8px; }
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 900px) {
-    .trophies-container {
-        flex-direction: column; /* Um embaixo do outro */
-        text-align: center;
-    }
+    .ficha-container, .trophies-container { flex-direction: column; gap: 30px; }
     
-    .section-title-wrapper {
-        text-align: center; /* Centraliza título no mobile */
-        margin-top: 20px;
-    }
+    .athlete-image-feature, .trophy-hero-image { max-width: 250px; margin: 0 auto; }
+    .action-shot, .hero-img-effect { transform: none; }
     
-    .hero-img-effect {
-        transform: rotate(0deg); /* Remove rotação no celular */
-        max-width: 280px;
-    }
+    .data-block { flex-direction: column; text-align: center; gap: 20px; }
+    .data-divider { width: 100%; height: 1px; }
+    .data-group { flex-direction: column; gap: 5px; }
     
-    .trophy-hero-image::before { display: none; } /* Remove detalhe de fundo no mobile */
+    .section-title-wrapper { text-align: center; margin-top: 20px; }
+    .trophy-hero-image::before { display: none; }
+    
+    .messi-header h2 { font-size: 1.8rem; }
+    .cards-scroller { padding-left: 20px; } /* Ajuste de padding no mobile */
 }
