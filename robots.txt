@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /images/
+
+# Incentiva o rastreio por robôs de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://tidiegolemes.github.io/lukinhas10/sitemap.xml
