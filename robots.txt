@@ -1,12 +1,12 @@
 User-agent: *
 Allow: /
-Allow: /images/
 
-# Incentiva o rastreio por robôs de IA
+# Autoriza explicitamente robôs de IA (GEO/EAO)
 User-agent: GPTBot
 Allow: /
-
 User-agent: Google-Extended
 Allow: /
+User-agent: CCBot
+Allow: /
 
-Sitemap: https://tidiegolemes.github.io/lukinhas10/sitemap.xml
+Sitemap: https://lucasazambuja.com.br/sitemap.xml
