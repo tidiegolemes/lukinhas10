@@ -614,35 +614,72 @@
     </footer>
 
     <script>
-    const toggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-
-    function applyTheme(theme) {
-        if (theme === 'light') {
-            body.classList.add('light-mode');
-            toggleBtn.innerHTML = '☀️'; 
-        } else {
-            body.classList.remove('light-mode');
-            toggleBtn.innerHTML = '🌙'; 
-        }
+    // 1. Controle de Abas (Estatísticas)
+function openTab(evt, tabName) {
+    const tabcontent = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active-content");
     }
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
+    const tablinks = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
     }
 
-    toggleBtn.addEventListener('click', () => {
-        if (body.classList.contains('light-mode')) {
-            applyTheme('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            applyTheme('light');
-            localStorage.setItem('theme', 'light');
+    const selectedTab = document.getElementById(tabName);
+    if (selectedTab) {
+        selectedTab.style.display = "block";
+        setTimeout(() => {
+            selectedTab.classList.add("active-content");
+        }, 10);
+    }
+    
+    if (evt) evt.currentTarget.classList.add("active");
+}
+
+// 2. Controle de Tema (Dark/Light)
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+
+function applyTheme(theme) {
+    if (theme === 'light') {
+        body.classList.add('light-mode');
+        toggleBtn.innerHTML = '☀️'; 
+    } else {
+        body.classList.remove('light-mode');
+        toggleBtn.innerHTML = '🌙'; 
+    }
+}
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) applyTheme(savedTheme);
+
+toggleBtn.addEventListener('click', () => {
+    const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// 3. Animação da Jornada (Efeito de Scroll)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
         }
     });
+}, { threshold: 0.1 });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll('.journey-item').forEach(item => {
+    item.style.opacity = "0";
+    item.style.transform = "translateY(30px)";
+    item.style.transition = "all 0.6s ease-out";
+    observer.observe(item);
+});
+
+// 4. Ano Automático no Rodapé
+document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
