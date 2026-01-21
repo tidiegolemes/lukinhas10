@@ -1,16 +1,23 @@
-/* --- CONFIGURAÇÕES GERAIS E CORES --- */
+/* PROJETO: Lucas Azambuja Oficial
+   DOMÍNIO: lucasazambuja.com.br
+   ESTILO: FIFA Prime / Messi Dynamic
+*/
+
 :root {
     /* --- PALETA DARK (FIFA PRIME) --- */
-    --bg-body: #090a0c;       /* Preto Profundo */
-    --bg-card: rgba(30, 35, 45, 0.7); /* Vidro Escuro */
+    --bg-body: #090a0c;
+    --bg-card: rgba(30, 35, 45, 0.7);
     --primary: #3b82f6;       /* Azul Grêmio Elétrico */
-    --accent: #00eaff;        /* Ciano Neon (Brilho) */
-    --gold: #ffcc00;          /* Dourado Títulos */
+    --accent: #00eaff;        /* Ciano Neon */
+    --gold: #ffcc00;          
     --text-main: #ffffff;
     --text-muted: #94a3b8;
     --border: 1px solid rgba(255, 255, 255, 0.1);
-    --glow: 0 0 20px rgba(59, 130, 246, 0.3); /* Brilho azul */
-    --gradient-text: linear-gradient(to right, #ffffff, #94a3b8);
+    --glow: 0 0 20px rgba(59, 130, 246, 0.3);
+    
+    /* Alteração Sugerida: Gradiente Prateado mais nítido para o nome LUCAS AZAMBUJA */
+    --gradient-text: linear-gradient(to right, #ffffff, #e2e8f0); 
+    
     --btn-social-bg: rgba(255, 255, 255, 0.05);
 }
 
