@@ -43,24 +43,21 @@
             "unitCode": "KGM",
             "unitText": "kg"
           },
-          "description": "Meio-campo canhoto da base do Grêmio FBPA. Destaque técnico em competições nacionais e internacionais de base.",
           "affiliation": [
             { "@type": "SportsTeam", "name": "Grêmio Foot-Ball Porto Alegrense" },
             { "@type": "SportsTeam", "name": "Real Gaúcho Futsal" }
           ],
-          "knowsAbout": ["Futebol", "Meio-campo Canhoto", "Futsal de Competição", "Scouting"],
-          "award": ["Tri-Campeão New Cup 2026", "Goleador Copa Sortica 2025", "Campeão IberLeague RS 2025"],
+          "award": [
+            "Tri-Campeão New Cup 2026", 
+            "Campeão IberLeague RS 2025", 
+            "Goleador Copa Sortica 2025", 
+            "Campeão Liga Canoense 2025", 
+            "Campeão Torneio LINF 2025"
+          ],
           "sameAs": [
             "https://www.instagram.com/lucasazambujaoficial/",
             "https://www.tiktok.com/@lukinhas10_oficial"
           ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://lucasazambuja.com.br/#website",
-          "url": "https://lucasazambuja.com.br",
-          "name": "Lucas Azambuja Oficial",
-          "publisher": { "@id": "https://lucasazambuja.com.br/#athlete" }
         }
       ]
     }
@@ -73,10 +70,11 @@
     <link rel="stylesheet" href="style.css?v=1.0.3">
 
     <style>
-        /* Estilos do Modal de Galeria */
+        /* Modal de Galeria */
         #photoModal { display:none; position:fixed; z-index:10000; inset:0; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; padding:20px; cursor:zoom-out; }
-        #modalImg { max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 0 30px var(--primary); border: 2px solid white; }
-        .reel-item, .messi-card { cursor: pointer; }
+        #modalImg { max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 0 30px var(--primary); border: 2px solid white; transition: 0.3s; }
+        .clickable-img { cursor: zoom-in; transition: 0.3s; }
+        .clickable-img:hover { filter: brightness(1.2); }
     </style>
 </head>
 <body>
@@ -87,7 +85,7 @@
     <header class="hero">
         <div class="container">
             <div class="profile-frame">
-                <img src="perfillukinhas10.jpg" alt="Lucas Azambuja" class="profile-pic">
+                <img src="perfillukinhas10.jpg" alt="Lucas Azambuja" class="profile-pic clickable-img">
                 <span class="verified-badge">✓</span>
             </div>
             <h1>LUCAS <span class="highlight">AZAMBUJA</span></h1>
@@ -114,41 +112,29 @@
             <h2>FICHA TÉCNICA <span class="highlight">2026</span></h2>
             <div class="ficha-container">
                 <div class="athlete-image-feature">
-                    <img src="driblando lukas.png" alt="Lucas Azambuja em ação" class="action-shot">
+                    <img src="driblando lukas.png" alt="Lucas Azambuja em ação" class="action-shot clickable-img">
                 </div>
                 <div class="athlete-data-structure">
                     <div class="data-block blue-accent">
                         <div class="data-group">
                             <span class="data-icon"><i class="fas fa-tshirt"></i></span>
-                            <div>
-                                <span class="data-label">Clube Atual</span>
-                                <span class="data-value">Grêmio FBPA</span>
-                            </div>
+                            <div><span class="data-label">Clube Atual</span><span class="data-value">Grêmio FBPA</span></div>
                         </div>
                         <div class="data-divider"></div>
                         <div class="data-group">
                             <span class="data-icon"><i class="fas fa-graduation-cap"></i></span>
-                            <div>
-                                <span class="data-label">Categoria</span>
-                                <span class="data-value">Sub-8 (2018)</span>
-                            </div>
+                            <div><span class="data-label">Categoria</span><span class="data-value">Sub-8 (2018)</span></div>
                         </div>
                     </div>
                     <div class="data-block cyan-accent">
-                         <div class="data-group">
+                        <div class="data-group">
                             <span class="data-icon"><i class="fas fa-arrows-alt-v"></i></span>
-                            <div>
-                                <span class="data-label">Altura / Peso</span>
-                                <span class="data-value">1.28m / 26kg</span>
-                            </div>
+                            <div><span class="data-label">Altura / Peso</span><span class="data-value">1.29m / 27kg</span></div>
                         </div>
                         <div class="data-divider"></div>
                         <div class="data-group">
                             <span class="data-icon"><i class="fas fa-boot"></i></span>
-                            <div>
-                                <span class="data-label">Perna Dominante</span>
-                                <span class="data-value highlight-neon">Esquerda (Canhoto)</span>
-                            </div>
+                            <div><span class="data-label">Perna Dominante</span><span class="data-value highlight-neon">Esquerda (Canhoto)</span></div>
                         </div>
                     </div>
                 </div>
@@ -156,62 +142,142 @@
         </div>
     </section>
 
-    <!-- ... Seção Messi Stats (Total, Grêmio, Real) Mantida Conforme Original ... -->
+    <!-- SEÇÃO STATS (TOTAL, GRÊMIO, REAL, OUTROS) MANTIDA COMPLETA -->
+    <section class="messi-stats-section">
+        <div class="stats-overlay"></div>
+        <div class="stats-bg-image" style="background-image: url('batendo falta lukas.png');"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="messi-header">
+                <h2>LUCAS AZAMBUJA <span class="highlight">STATS</span></h2>
+                <div class="stats-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'total')">TOTAL</button>
+                    <button class="tab-btn" onclick="openTab(event, 'gremio')">GRÊMIO</button>
+                    <button class="tab-btn" onclick="openTab(event, 'real')">REAL GAÚCHO</button>
+                    <button class="tab-btn" onclick="openTab(event, 'outros')">OUTROS</button>
+                </div>
+            </div>
 
+            <div id="total" class="tab-content active-content">
+                <div class="stat-row">
+                    <div class="stat-info"><h3>GOLS OFICIAIS</h3><div class="progress-bar-container"><div class="progress-bar red-bar" style="width: 85%;"></div><span class="bar-value">34</span></div></div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-info"><h3>TÍTULOS</h3><div class="progress-bar-container"><div class="progress-bar green-bar" style="width: 70%;"></div><span class="bar-value">8</span></div></div>
+                </div>
+            </div>
+
+            <div id="gremio" class="tab-content">
+                <div class="club-header">
+                    <img src="gremio-logo.png" alt="Grêmio" style="height: 40px;">
+                    <div><h3 style="margin:0; font-size:1.1rem;">Grêmio FBPA</h3><p style="margin:0; font-size:0.8rem; color:#ccc;">Sub-8 Campo</p></div>
+                </div>
+                <div class="stat-row"><div class="stat-info"><h3>GOLS</h3><div class="progress-bar-container"><div class="progress-bar red-bar" style="width: 60%;"></div><span class="bar-value">12</span></div></div></div>
+            </div>
+
+            <div id="real" class="tab-content">
+                <div class="club-header">⚽ <div><h3 style="margin:0; font-size:1.1rem;">Real Gaúcho</h3><p style="margin:0; font-size:0.8rem; color:#ccc;">Futsal Competição</p></div></div>
+                <div class="stat-row"><div class="stat-info"><h3>GOLS</h3><div class="progress-bar-container"><div class="progress-bar red-bar" style="width: 40%;"></div><span class="bar-value">8</span></div></div></div>
+            </div>
+
+            <div id="outros" class="tab-content">
+                <div class="club-header"><p>Flamengo & Iniciação</p></div>
+                <div class="stat-row"><div class="stat-info"><h3>GOLS</h3><div class="progress-bar-container"><div class="progress-bar red-bar" style="width: 50%;"></div><span class="bar-value">14</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE TÍTULOS - TODOS RESTAURADOS -->
     <section class="trophies-dynamic-section">
-        <!-- Estrutura original mantida, pronta para o modal -->
         <div class="container trophies-container">
             <div class="trophy-hero-image">
-                <img src="conduzindo bola lukas.png" alt="Lucas Azambuja Títulos" class="hero-img-effect">
+                <img src="conduzindo bola lukas.png" alt="Lucas Azambuja Títulos" class="hero-img-effect clickable-img">
             </div>
             <div class="trophy-carousel-wrapper">
                 <div class="section-title-wrapper">
-                    <h2>GALERIA DE <span class="highlight">CONQUISTAS</span></h2>
+                    <h2>COLEÇÃO DE <span class="highlight">TÍTULOS</span></h2>
                     <p>Arraste para ver a coleção ➝</p>
                 </div>
                 <div class="cards-scroller">
-                    <!-- Cards de troféus originais ... -->
                     <div class="messi-card">
                         <div class="card-header-date"><span class="month">JAN</span><span class="year">2026</span></div>
                         <div class="card-body">
                             <span class="status-badge gold">CAMPEÃO</span>
                             <h3>New Cup Chopinzinho</h3>
-                            <div class="match-details">
-                                <span class="team-name">Grêmio FBPA</span>
-                                <div class="score">TRI</div>
-                            </div>
+                            <div class="match-details"><span class="team-name">Grêmio FBPA</span><div class="score">TRI</div></div>
                             <div class="card-footer"><i class="fab fa-instagram"></i> @newcup ↗</div>
                         </div>
                     </div>
-                    <!-- Outros cards ... -->
+
+                    <div class="messi-card">
+                        <div class="card-header-date"><span class="month">OUT</span><span class="year">2025</span></div>
+                        <div class="card-body">
+                            <span class="status-badge gold">CAMPEÃO</span>
+                            <h3>IberLeague RS</h3>
+                            <div class="match-details"><span class="team-name">Grêmio / 5 Gols</span></div>
+                            <div class="card-footer"><i class="fas fa-globe"></i> Internacional</div>
+                        </div>
+                    </div>
+
+                    <div class="messi-card">
+                        <div class="card-header-date"><span class="month">DEZ</span><span class="year">2025</span></div>
+                        <div class="card-body">
+                            <span class="status-badge blue">GOLEADOR</span>
+                            <h3>Copa Sortica</h3>
+                            <div class="match-details"><div class="score">6 GOLS</div></div>
+                            <div class="card-footer"><i class="fab fa-instagram"></i> @sortica ↗</div>
+                        </div>
+                    </div>
+
+                    <div class="messi-card">
+                        <div class="card-header-date"><span class="month">NOV</span><span class="year">2025</span></div>
+                        <div class="card-body">
+                            <span class="status-badge gold">CAMPEÃO</span>
+                            <h3>Liga Canoense</h3>
+                            <div class="match-details"><span class="team-name">Série Ouro</span></div>
+                            <div class="card-footer"><i class="fab fa-instagram"></i> @ligacanoense ↗</div>
+                        </div>
+                    </div>
+
+                    <div class="messi-card">
+                        <div class="card-header-date"><span class="month">ABR</span><span class="year">2025</span></div>
+                        <div class="card-body">
+                            <span class="status-badge gold">CAMPEÃO</span>
+                            <h3>Torneio LINF</h3>
+                            <div class="match-details"><span class="team-name">Invicto</span></div>
+                            <div class="card-footer"><i class="fab fa-instagram"></i> @linf ↗</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ... Seção Journey Mantida ... -->
+    <!-- SEÇÃO JORNADA MANTIDA -->
+    <section class="rocket-journey-section">
+        <div class="journey-bg" style="background-image: url('driblando lukas.png');"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title-wrapper" style="text-align: center; margin-bottom: 50px;">
+                <h2>A JORNADA <span class="highlight">DO 10</span> 🚀</h2>
+            </div>
+            <div class="rocket-timeline">
+                <div class="journey-item"><div class="journey-marker rocket-icon"><i class="fas fa-rocket"></i></div><div class="journey-content highlight-content"><span class="journey-year">2024 - ATUAL</span><h3>Titular no Grêmio</h3><p>Protagonista na base Sub-8.</p></div></div>
+                <div class="journey-item"><div class="journey-marker"><i class="fas fa-eye"></i></div><div class="journey-content"><span class="journey-year">2023</span><h3>Olhar do Grêmio</h3><p>Ingresso na categoria acima.</p></div></div>
+                <div class="journey-item"><div class="journey-marker"><i class="fas fa-futbol"></i></div><div class="journey-content"><span class="journey-year">2022</span><h3>Iniciação</h3><p>Flamengo e Rabelo.</p></div></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- MOMENTOS EM CAMPO - TODOS RESTAURADOS -->
     <section class="s-section">
         <div class="container">
             <h2>Momentos em <span class="highlight">Campo</span></h2>
-            <p class="subtitle" style="margin-bottom: 30px; color: #aaa;">Clique na imagem para ampliar ➝</p>
+            <p class="subtitle" style="margin-bottom: 30px; color: #aaa;">Clique para ampliar ➝</p>
             <div class="reels-container">
-                <div class="reel-item">
-                    <div class="reel-img" style="background-image: url('perfillukinhas10.jpg');"></div>
-                    <div class="reel-overlay"><h3>Goleador</h3><p>New Cup 2026</p></div>
-                </div>
-                <div class="reel-item">
-                    <div class="reel-img" style="background-image: url('reel1.jpg');"></div>
-                    <div class="reel-overlay"><h3>Foco</h3><p>Concentração</p></div>
-                </div>
-                <div class="reel-item">
-                    <div class="reel-img" style="background-image: url('reel11.jpg');"></div>
-                    <div class="reel-overlay"><h3>Campeão</h3><p>Grêmio FBPA</p></div>
-                </div>
-                <div class="reel-item">
-                    <div class="reel-img" style="background-image: url('reel5.jpg');"></div>
-                    <div class="reel-overlay"><h3>Habilidade</h3><p>Drible Curto</p></div>
-                </div>
+                <div class="reel-item"><div class="reel-img clickable-img" style="background-image: url('perfillukinhas10.jpg');"></div><div class="reel-overlay"><h3>Goleador</h3><p>New Cup 2026</p></div></div>
+                <div class="reel-item"><div class="reel-img clickable-img" style="background-image: url('reel1.jpg');"></div><div class="reel-overlay"><h3>Foco</h3><p>Concentração</p></div></div>
+                <div class="reel-item"><div class="reel-img clickable-img" style="background-image: url('reel11.jpg');"></div><div class="reel-overlay"><h3>Campeão</h3><p>Grêmio FBPA</p></div></div>
+                <div class="reel-item"><div class="reel-img clickable-img" style="background-image: url('reel5.jpg');"></div><div class="reel-overlay"><h3>Habilidade</h3><p>Drible Curto</p></div></div>
+                <div class="reel-item"><div class="reel-img clickable-img" style="background-image: url('reel6.jpg');"></div><div class="reel-overlay"><h3>Treino</h3><p>Evolução</p></div></div>
             </div>
         </div>
     </section>
@@ -219,10 +285,7 @@
     <footer>
         <div class="container footer-content">
             <p>© <span id="year"></span> <strong>Lucas Azambuja</strong> Oficial.</p>
-            <div class="managed-by">
-                <p>Gestão de Carreira:</p>
-                <a href="https://futtalento.com.br" target="_blank" class="agency-link">FutTalento ↗</a>
-            </div>
+            <div class="managed-by"><p>Gestão de Carreira:</p><a href="https://futtalento.com.br" target="_blank" class="agency-link">FutTalento ↗</a></div>
         </div>
     </footer>
 
@@ -232,19 +295,22 @@
     </div>
 
     <script>
-    // Lógica da Galeria (Modal)
-    document.querySelectorAll('.reel-img, .hero-img-effect, .action-shot').forEach(item => {
-        item.style.cursor = 'zoom-in';
-        item.addEventListener('click', function() {
+    // SCRIPT DA GALERIA CORRIGIDO
+    document.querySelectorAll('.clickable-img').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evita fechamento imediato
             let url = "";
             if (this.tagName === 'IMG') {
                 url = this.src;
             } else {
-                const bg = this.style.backgroundImage;
-                url = bg.replace('url("', '').replace('")', '');
+                // Pega a URL do backgroundImage do CSS
+                const bg = window.getComputedStyle(this).backgroundImage;
+                url = bg.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
             }
-            document.getElementById('modalImg').src = url;
-            document.getElementById('photoModal').style.display = 'flex';
+            if(url && url !== "none") {
+                document.getElementById('modalImg').src = url;
+                document.getElementById('photoModal').style.display = 'flex';
+            }
         });
     });
 
@@ -266,7 +332,6 @@
         if (evt) evt.currentTarget.classList.add("active");
     }
 
-    // Theme and Year
     const toggleBtn = document.getElementById('themeToggle');
     toggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
