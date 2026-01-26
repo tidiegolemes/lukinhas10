@@ -1,11 +1,13 @@
 User-agent: *
 Allow: /
 
-# Autoriza explicitamente robôs de IA (GEO/EAO)
+# Autoriza explicitamente robôs de IA para Answer Engine Optimization (AEO)
 User-agent: GPTBot
 Allow: /
+
 User-agent: Google-Extended
 Allow: /
+
 User-agent: CCBot
 Allow: /
 
