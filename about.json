@@ -33,5 +33,20 @@
     "https://www.instagram.com/p/DTisRIeCaO9/",
     "https://www.instagram.com/p/DdoiQG5lViF/",
     "https://www.instagram.com/p/DbD_XVxuTMM/"
-  ]
+  ],
+  "partners": [
+    {
+      "name": "Guimarães",
+      "status": "Parceiro oficial",
+      "slogan": "Energia que movimenta!",
+      "logo": "https://www.lucasazambuja.com.br/parceiro-guimaraes.jpg",
+      "official_link": null
+    }
+  ],
+  "partner_contact": {
+    "responsible": "Juliana",
+    "relation": "responsável pelo atleta",
+    "whatsapp": "+55 51 99305-1967",
+    "form_anchor": "https://www.lucasazambuja.com.br/#seja-parceiro"
+  }
 }
