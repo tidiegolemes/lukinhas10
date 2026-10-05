@@ -1,11 +1,31 @@
 {
   "entity": "Lucas Azambuja",
-  "position": "Meio-campo Canhoto",
+  "alternate_name": "Lukinhas10",
+  "position": "Meio-campo canhoto",
   "club": "Grêmio FBPA",
   "category": "Sub-8",
-  "born": "2018",
+  "birth_year_category": 2018,
   "location": "Porto Alegre, RS, Brasil",
-  "official_website": "https://lucasazambuja.com.br",
-  "verification": "Atleta Federado",
-  "agency": "FutTalento"
+  "official_website": "https://www.lucasazambuja.com.br/",
+  "verification": "Atleta federado",
+  "agency": "FutTalento",
+  "last_updated": "2026-10-05",
+  "recent_highlight": {
+    "event": "Gre-Nal Sub-8",
+    "opponent": "Internacional",
+    "goal": 1,
+    "assist": 1,
+    "context": "campanha campeã"
+  },
+  "recent_titles": [
+    "Copa Base Baby",
+    "Série Prata da Copa América de Futsal",
+    "New Cup de Verão",
+    "New Cup de Inverno"
+  ],
+  "public_records": [
+    "https://www.instagram.com/p/DTisRIeCaO9/",
+    "https://www.instagram.com/p/DdoiQG5lViF/",
+    "https://www.instagram.com/p/DbD_XVxuTMM/"
+  ]
 }
