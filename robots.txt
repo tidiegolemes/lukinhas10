@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Autoriza explicitamente robôs de IA para Answer Engine Optimization (AEO)
+# O site é público e permite rastreamento por buscadores e mecanismos de resposta.
 User-agent: GPTBot
 Allow: /
 
@@ -11,4 +11,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://lucasazambuja.com.br/sitemap.xml
+Sitemap: https://www.lucasazambuja.com.br/sitemap.xml
