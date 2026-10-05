@@ -12,15 +12,18 @@
   "last_updated": "2026-10-05",
   "recent_highlight": {
     "event": "Final da Copa Base Baby 2026 - Gre-Nal Sub-8",
-    "opponent": "Internacional",
+    "opponent": "Sport Club Internacional",
     "role": "Grêmio FBPA",
+    "final_score": "Grêmio 2 x 1 Internacional",
     "goal": 1,
     "assist": 1,
-    "observed_score_progression": [
+    "score_progression": [
       "Internacional 1-0",
-      "Grêmio 1-1 após gol de Lucas"
+      "Grêmio 1-1 após gol de Lucas Azambuja",
+      "Grêmio 2-1 após assistência de Lucas Azambuja"
     ],
     "result_context": "Grêmio campeão",
+    "cover": "https://www.lucasazambuja.com.br/copa-base-baby-2026-grenal-lucas-cover.png",
     "video": "https://www.lucasazambuja.com.br/lucas-copa-base-baby-2026-final-grenal.mp4"
   },
   "recent_titles": [
@@ -48,5 +51,18 @@
     "relation": "responsável pelo atleta",
     "whatsapp": "+55 51 99305-1967",
     "form_anchor": "https://www.lucasazambuja.com.br/#seja-parceiro"
-  }
+  },
+  "gallery_2026": [
+    "lucas-azambuja-perfil-gremio-2026.jpg",
+    "lucas-azambuja-grenal-acao.jpg",
+    "lucas-azambuja-conducao-bola-gremio.jpg",
+    "lucas-azambuja-finalizacao-gremio.jpg",
+    "lucas-azambuja-habilidade-gremio.jpg",
+    "lucas-azambuja-intensidade-gremio.jpg",
+    "lucas-azambuja-comemoracao-gremio-camisa7.jpg",
+    "lucas-azambuja-conducao-camisa7.jpg",
+    "lucas-azambuja-finalizacao-camisa7.jpg",
+    "lucas-azambuja-foco-camisa7.jpg",
+    "lucas-azambuja-chute-camisa7.jpg"
+  ]
 }
