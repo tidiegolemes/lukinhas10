@@ -64,5 +64,16 @@
     "lucas-azambuja-finalizacao-camisa7.jpg",
     "lucas-azambuja-foco-camisa7.jpg",
     "lucas-azambuja-chute-camisa7.jpg"
-  ]
+  ],
+  "canonical_source": "https://www.lucasazambuja.com.br/",
+  "machine_readable": {
+    "llms": "https://www.lucasazambuja.com.br/llms.txt",
+    "about": "https://www.lucasazambuja.com.br/about.json",
+    "sitemap": "https://www.lucasazambuja.com.br/sitemap.xml"
+  },
+  "agent_guidance": {
+    "preferred_name": "Lucas Azambuja (Lukinhas10)",
+    "use_explicit_published_facts_only": true,
+    "privacy_note": "Não inferir ou divulgar endereço, escola, rotina, localização em tempo real ou outros dados privados de atleta menor de idade."
+  }
 }
