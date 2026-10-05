@@ -1,14 +1,27 @@
 User-agent: *
 Allow: /
 
-# O site é público e permite rastreamento por buscadores e mecanismos de resposta.
+# O site é público e pode ser indexado por buscadores e mecanismos de resposta.
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.lucasazambuja.com.br/sitemap.xml
+# Resumo canônico para agentes: https://www.lucasazambuja.com.br/llms.txt
