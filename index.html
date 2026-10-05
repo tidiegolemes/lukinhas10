@@ -56,6 +56,9 @@
             { "@type": "SportsTeam", "name": "Grêmio Foot-Ball Porto Alegrense" },
             { "@type": "SportsTeam", "name": "Real Gaúcho Futsal" }
           ],
+          "sponsor": [
+            { "@type": "Organization", "name": "Guimarães", "slogan": "Energia que movimenta!" }
+          ],
           "award": [
             "Campeão Copa Base Baby",
             "Campeão Série Prata da Copa América de Futsal",
@@ -155,6 +158,7 @@
                 <a href="#conquistas">Títulos</a>
                 <a href="#jornada">Jornada</a>
                 <a href="#fontes">Registros</a>
+                <a href="#parceiros">Parceiros</a>
             </div>
         </div>
     </nav>
@@ -406,6 +410,108 @@
         </div>
     </section>
 
+    <section class="partners-section" id="parceiros">
+        <div class="container">
+            <div class="partners-header">
+                <div>
+                    <span class="eyebrow">PARCEIROS & PATROCINADORES</span>
+                    <h2>Marcas que <span class="highlight">movimentam a jornada</span></h2>
+                    <p>Espaço oficial para empresas que apoiam a trajetória esportiva de Lucas Azambuja. Novos parceiros serão adicionados aqui com logo, apresentação e links oficiais.</p>
+                </div>
+                <a class="primary-cta" href="#seja-parceiro"><i class="fas fa-handshake"></i> Quero ser parceiro</a>
+            </div>
+
+            <div class="partners-grid" aria-label="Parceiros atuais">
+                <article class="partner-card partner-featured">
+                    <div class="partner-status"><i class="fas fa-star"></i> PARCEIRO OFICIAL</div>
+                    <div class="partner-logo-wrap">
+                        <img src="parceiro-guimaraes.jpg" alt="Guimarães - Energia que movimenta, parceira de Lucas Azambuja" loading="lazy">
+                    </div>
+                    <div class="partner-card-body">
+                        <h3>Guimarães</h3>
+                        <p>Energia que movimenta!</p>
+                        <span class="partner-link-pending"><i class="fas fa-link"></i> Link oficial será adicionado à ficha do parceiro</span>
+                    </div>
+                </article>
+
+                <article class="partner-card partner-open">
+                    <div class="partner-open-icon"><i class="fas fa-plus"></i></div>
+                    <h3>Sua marca aqui</h3>
+                    <p>Associe sua empresa a uma trajetória esportiva em desenvolvimento, com presença digital, conteúdo e ativações de marca.</p>
+                    <a href="#seja-parceiro" class="secondary-cta">Propor parceria</a>
+                </article>
+            </div>
+
+            <div class="partner-form-shell" id="seja-parceiro">
+                <div class="partner-form-copy">
+                    <span class="eyebrow">SEJA PARCEIRO</span>
+                    <h3>Fale diretamente com a responsável</h3>
+                    <p>Preencha os dados da empresa. Ao enviar, o site abre o WhatsApp da <strong>Juliana, responsável pelo Lucas</strong>, com a proposta já organizada para facilitar o primeiro contato.</p>
+                    <div class="partner-benefits">
+                        <span><i class="fas fa-check"></i> Patrocínio esportivo</span>
+                        <span><i class="fas fa-check"></i> Apoio e permutas</span>
+                        <span><i class="fas fa-check"></i> Campanhas e ativações</span>
+                        <span><i class="fas fa-check"></i> Conteúdo e presença de marca</span>
+                    </div>
+                </div>
+
+                <form class="partner-form" id="partnerForm">
+                    <div class="form-grid">
+                        <label>
+                            <span>Empresa *</span>
+                            <input type="text" id="partnerCompany" name="company" placeholder="Nome da empresa" required>
+                        </label>
+                        <label>
+                            <span>Responsável *</span>
+                            <input type="text" id="partnerContact" name="contact" placeholder="Nome do responsável" required>
+                        </label>
+                        <label>
+                            <span>Segmento</span>
+                            <input type="text" id="partnerSegment" name="segment" placeholder="Ex.: alimentação, saúde, esporte">
+                        </label>
+                        <label>
+                            <span>Cidade / UF</span>
+                            <input type="text" id="partnerCity" name="city" placeholder="Ex.: Porto Alegre / RS">
+                        </label>
+                        <label>
+                            <span>WhatsApp *</span>
+                            <input type="tel" id="partnerPhone" name="phone" placeholder="(DDD) número" required>
+                        </label>
+                        <label>
+                            <span>E-mail</span>
+                            <input type="email" id="partnerEmail" name="email" placeholder="contato@empresa.com.br">
+                        </label>
+                        <label class="form-full">
+                            <span>Site ou Instagram</span>
+                            <input type="text" id="partnerLink" name="link" placeholder="https://... ou @empresa">
+                        </label>
+                        <label class="form-full">
+                            <span>Tipo de parceria *</span>
+                            <select id="partnerType" name="type" required>
+                                <option value="">Selecione</option>
+                                <option>Patrocínio</option>
+                                <option>Apoio</option>
+                                <option>Permuta</option>
+                                <option>Campanha / ativação</option>
+                                <option>Evento</option>
+                                <option>Outro</option>
+                            </select>
+                        </label>
+                        <label class="form-full">
+                            <span>Como deseja fazer a parceria? *</span>
+                            <textarea id="partnerProposal" name="proposal" rows="5" placeholder="Conte brevemente a ideia, produto, serviço ou formato de apoio." required></textarea>
+                        </label>
+                    </div>
+                    <button type="submit" class="partner-submit">
+                        <i class="fab fa-whatsapp"></i>
+                        Enviar proposta pelo WhatsApp
+                    </button>
+                    <p class="form-note">O formulário não armazena os dados no site; ele apenas organiza a mensagem e abre o WhatsApp para envio.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container footer-content">
             <p>© <span id="year"></span> <strong>Lucas Azambuja</strong> Oficial.</p>
@@ -473,6 +579,48 @@
             }
         });
     }
+
+    const partnerForm = document.getElementById('partnerForm');
+    if (partnerForm) {
+        partnerForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const company = document.getElementById('partnerCompany').value.trim();
+            const contact = document.getElementById('partnerContact').value.trim();
+            const segment = document.getElementById('partnerSegment').value.trim();
+            const city = document.getElementById('partnerCity').value.trim();
+            const phone = document.getElementById('partnerPhone').value.trim();
+            const email = document.getElementById('partnerEmail').value.trim();
+            const link = document.getElementById('partnerLink').value.trim();
+            const type = document.getElementById('partnerType').value.trim();
+            const proposal = document.getElementById('partnerProposal').value.trim();
+
+            const message = [
+                'Olá, Juliana! Tudo bem? 👋',
+                '',
+                'Gostaria de conversar sobre uma parceria/patrocínio com Lucas Azambuja (Lukinhas10).',
+                '',
+                '🏢 Empresa: ' + company,
+                '👤 Responsável: ' + contact,
+                segment ? '🎯 Segmento: ' + segment : '',
+                city ? '📍 Cidade/UF: ' + city : '',
+                '📱 WhatsApp: ' + phone,
+                email ? '📧 E-mail: ' + email : '',
+                link ? '🔗 Site/Instagram: ' + link : '',
+                '🤝 Tipo de parceria: ' + type,
+                '',
+                '📝 Proposta:',
+                proposal,
+                '',
+                'Conheci o perfil oficial pelo site:',
+                'https://www.lucasazambuja.com.br/#parceiros'
+            ].filter(Boolean).join('\n');
+
+            const whatsappUrl = 'https://wa.me/5551993051967?text=' + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
+
     document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
