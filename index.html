@@ -250,7 +250,7 @@
 
                         <div class="teams-versus" aria-label="Placar final: Grêmio 2 a 1 Internacional">
                             <div class="team-side gremio-side">
-                                <img src="gremio-logo.png" alt="Escudo do Grêmio FBPA" width="72" height="72" decoding="async">
+                                <img src="gremio-logo.png" alt="Escudo do Grêmio FBPA" width="72" height="72" loading="lazy" decoding="async" fetchpriority="low">
                                 <strong>GRÊMIO</strong>
                                 <small>FBPA</small>
                             </div>
@@ -339,7 +339,7 @@
         </div>
     </section><!-- JORNADA DO 10 - RESTAURADA COMPLETA -->
     <section class="rocket-journey-section" id="jornada">
-        <div class="journey-bg" style="background-image: url('driblando lukas.png');"></div>
+        <div class="journey-bg lazy-bg" data-bg="driblando lukas.png" aria-hidden="true"></div>
         <div class="container" style="position: relative; z-index: 2;">
             <div class="section-title-wrapper" style="text-align: center; margin-bottom: 50px;">
                 <h2>A JORNADA <span class="highlight">DO 10</span> 🚀</h2>
@@ -573,6 +573,26 @@
         }
         if (evt) evt.currentTarget.classList.add("active");
     }
+
+    document.querySelectorAll('.lazy-bg').forEach(el => {
+        const loadBackground = () => {
+            if (el.dataset.bg) {
+                el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+                delete el.dataset.bg;
+            }
+        };
+        if ('IntersectionObserver' in window) {
+            const bgObserver = new IntersectionObserver((entries, observer) => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    loadBackground();
+                    observer.disconnect();
+                }
+            }, { rootMargin: '500px 0px' });
+            bgObserver.observe(el);
+        } else {
+            loadBackground();
+        }
+    });
 
     const lazyPosterVideo = document.querySelector('video[data-poster]');
     if (lazyPosterVideo) {
