@@ -11,11 +11,17 @@
   "agency": "FutTalento",
   "last_updated": "2026-10-05",
   "recent_highlight": {
-    "event": "Gre-Nal Sub-8",
+    "event": "Final da Copa Base Baby 2026 - Gre-Nal Sub-8",
     "opponent": "Internacional",
+    "role": "Grêmio FBPA",
     "goal": 1,
     "assist": 1,
-    "context": "campanha campeã"
+    "observed_score_progression": [
+      "Internacional 1-0",
+      "Grêmio 1-1 após gol de Lucas"
+    ],
+    "result_context": "Grêmio campeão",
+    "video": "https://www.lucasazambuja.com.br/lucas-copa-base-baby-2026-final-grenal.mp4"
   },
   "recent_titles": [
     "Copa Base Baby",
