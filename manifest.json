@@ -1,8 +1,8 @@
 {
   "name": "Lucas Azambuja Oficial",
-  "short_name": "Lucas10",
-  "description": "Perfil oficial do atleta Lucas Azambuja do Grêmio FBPA.",
-  "start_url": "index.html",
+  "short_name": "Lukinhas10",
+  "description": "Perfil oficial de Lucas Azambuja, atleta do Grêmio FBPA Sub-8.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#090a0c",
   "theme_color": "#3b82f6",
