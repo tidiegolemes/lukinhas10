@@ -21,24 +21,10 @@
     --btn-social-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* --- PALETA LIGHT (MODO DIA) --- */
-.light-mode {
-    --bg-body: #eef2f6;
-    --bg-card: #ffffff;
-    --primary: #0d80bf;       /* Azul Grêmio Sólido */
-    --accent: #0056b3;
-    --text-main: #1e293b;     /* Cinza Chumbo Escuro */
-    --text-muted: #64748b;
-    --border: 1px solid rgba(0, 0, 0, 0.05);
-    --glow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --gradient-text: linear-gradient(to right, #0d80bf, #1e293b);
-    --btn-social-bg: rgba(0, 0, 0, 0.05);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.4s ease, color 0.3s ease, border-color 0.3s; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
@@ -62,15 +48,6 @@ body {
 
 .hero, .quick-links, .stats-dynamic, .messi-stats-section, .career-table-section, .trophies-dynamic-section, .timeline-section {
     animation: fadeInUp 0.8s ease forwards;
-}
-
-/* --- BOTÃO TEMA FLUTUANTE --- */
-.theme-switch {
-    position: fixed; top: 25px; right: 25px; width: 50px; height: 50px;
-    border-radius: 50%; background: var(--bg-card); border: var(--border);
-    backdrop-filter: blur(10px); color: var(--text-main); font-size: 1.5rem;
-    cursor: pointer; z-index: 999; box-shadow: var(--glow);
-    display: flex; align-items: center; justify-content: center;
 }
 
 /* --- HERO SECTION --- */
@@ -160,7 +137,7 @@ h1 {
     cursor: pointer; background-color: #1a1a1a;
 }
 .reel-item:hover { transform: translateY(-10px); border-color: #00eaff; box-shadow: 0 20px 40px rgba(0, 234, 255, 0.2); }
-.reel-img { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reel-img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform .35s ease; }
 .reel-item:hover .reel-img { transform: scale(1.1); }
 
 .reel-overlay {
@@ -263,7 +240,7 @@ footer {
 .tab-btn {
     background: transparent; border: none; color: rgba(255,255,255,0.5);
     font-size: 1rem; font-weight: 700; text-transform: uppercase; padding: 10px 0;
-    cursor: pointer; position: relative; transition: 0.3s; font-family: 'Montserrat', sans-serif; white-space: nowrap;
+    cursor: pointer; position: relative; transition: 0.3s; font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; white-space: nowrap;
 }
 .tab-btn:hover { color: white; }
 .tab-btn.active { color: var(--accent); }
@@ -703,7 +680,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     border-radius: 999px;
     min-height: 46px;
     padding: 0 18px;
-    font: 800 .78rem 'Montserrat',sans-serif;
+    font: 800 .78rem Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: .04em;
     cursor: pointer;
@@ -1422,7 +1399,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     border-radius: 12px;
     padding: 13px 14px;
     outline: none;
-    font: 500 .85rem 'Montserrat',sans-serif;
+    font: 500 .85rem Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     transition: border-color .2s ease, background .2s ease;
 }
 .partner-form select option { color: #111; }
@@ -1445,7 +1422,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     cursor: pointer;
     color: #06230e;
     background: linear-gradient(135deg,#25d366,#62e891);
-    font: 900 .8rem 'Montserrat',sans-serif;
+    font: 900 .8rem Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     letter-spacing: .03em;
     text-transform: uppercase;
     box-shadow: 0 14px 36px rgba(37,211,102,.16);
@@ -1499,3 +1476,241 @@ html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 .field-moments-section .reels-container{margin-left:-10px;margin-right:-10px;padding-bottom:34px}
 .field-moments-section .reel-item{min-width:clamp(230px,24vw,300px);height:clamp(410px,48vw,520px)}
 @media(max-width:700px){.field-moments-heading{align-items:flex-start;flex-direction:column}.teams-versus{gap:10px;padding-left:14px;padding-right:14px}.team-side img{width:62px;height:62px}.final-score-mark{min-width:82px;font-size:2rem}}
+
+
+/* === DARK ONLY + MOBILE PERFORMANCE v3 === */
+:root { color-scheme: dark; }
+html, body { background:#090a0c; }
+body { min-height:100%; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+img, video { max-width:100%; }
+img { height:auto; }
+
+/* Limit transitions to interactive components only. */
+a, button, .reel-item, .reel-img, .clickable-img, .messi-card, .journey-content {
+    transition: transform .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease, filter .2s ease, background-color .2s ease;
+}
+
+/* Skip below-the-fold paint/layout work until needed. */
+.latest-highlight,
+.trophies-dynamic-section,
+.rocket-journey-section,
+.field-moments-section,
+.authority-section,
+.partners-section,
+footer {
+    content-visibility:auto;
+    contain-intrinsic-size:1px 900px;
+}
+
+/* Improve horizontal components on touch. */
+.reels-container,
+.cards-scroller,
+.stats-tabs {
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+}
+
+/* Stable image sizing in gallery. */
+.reel-img {
+    aspect-ratio:852 / 1280;
+    background:#11161e;
+}
+.reel-item { isolation:isolate; }
+
+/* Better tap targets and keyboard visibility. */
+a, button, input, select, textarea { -webkit-tap-highlight-color:rgba(0,234,255,.16); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+}
+
+/* Mobile-first refinements */
+@media (max-width: 760px) {
+    html { scroll-padding-top:112px; }
+
+    .container {
+        width:100%;
+        padding-left:max(16px, env(safe-area-inset-left));
+        padding-right:max(16px, env(safe-area-inset-right));
+    }
+
+    .site-nav {
+        background:rgba(7,10,15,.96);
+        backdrop-filter:none;
+    }
+    .nav-inner {
+        min-height:auto;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding-top:10px;
+        padding-bottom:8px;
+    }
+    .nav-brand {
+        font-size:1rem;
+        line-height:1;
+        padding:3px 0 8px;
+    }
+    .nav-links {
+        width:100%;
+        gap:16px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        padding:7px 0 3px;
+        scroll-snap-type:x proximity;
+    }
+    .nav-links::-webkit-scrollbar { display:none; }
+    .nav-links a {
+        flex:0 0 auto;
+        min-height:32px;
+        display:flex;
+        align-items:center;
+        font-size:.66rem;
+        scroll-snap-align:start;
+    }
+
+    .hero-2026 {
+        padding:46px 0 34px;
+    }
+    .hero-2026::before {
+        width:280px;
+        height:280px;
+        right:-120px;
+        top:-80px;
+        opacity:.7;
+    }
+    .hero-grid {
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    .hero-copy h1 {
+        font-size:clamp(2.55rem,14vw,4rem);
+        line-height:.9;
+        letter-spacing:-1.6px;
+    }
+    .hero-copy .subtitle {
+        font-size:.76rem;
+        line-height:1.55;
+        letter-spacing:.12em;
+    }
+    .hero-copy .bio-text {
+        font-size:.92rem;
+        line-height:1.68;
+    }
+    .hero-achievement {
+        padding:16px;
+    }
+    .hero-actions {
+        display:grid;
+        grid-template-columns:1fr;
+    }
+    .hero-actions .primary-cta,
+    .hero-actions .secondary-cta {
+        width:100%;
+        min-height:48px;
+    }
+    .hero-profile .profile-frame {
+        width:176px;
+        height:176px;
+    }
+
+    .quick-links .social-flex {
+        gap:10px;
+        justify-content:flex-start;
+        overflow-x:auto;
+        padding:4px 2px 12px;
+        scrollbar-width:none;
+    }
+    .quick-links .social-flex::-webkit-scrollbar { display:none; }
+    .social-icon {
+        width:46px;
+        min-width:46px;
+        height:46px;
+    }
+
+    .section-heading-inline {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .latest-highlight,
+    .trophies-dynamic-section,
+    .rocket-journey-section,
+    .field-moments-section,
+    .authority-section,
+    .partners-section {
+        padding-top:58px;
+        padding-bottom:58px;
+    }
+
+    .match-feature-grid { gap:24px; }
+    .featured-video-shell {
+        width:min(100%,360px);
+        padding:7px;
+        border-radius:20px;
+    }
+    .featured-video-shell video { border-radius:15px; }
+    .video-meta-strip {
+        padding:10px 5px 3px;
+        font-size:.58rem;
+    }
+    .teams-versus {
+        grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+        padding:22px 10px;
+    }
+    .team-side strong {
+        font-size:.78rem;
+        line-height:1.15;
+    }
+    .team-side small { font-size:.68rem; }
+    .match-story { padding:0 12px 16px; }
+    .story-step {
+        grid-template-columns:54px minmax(0,1fr);
+        gap:10px;
+    }
+
+    .field-moments-section .reels-container {
+        padding-left:0;
+        padding-right:16px;
+        scroll-padding-left:0;
+        gap:12px;
+    }
+    .field-moments-section .reel-item {
+        min-width:min(78vw,280px);
+        height:min(126vw,470px);
+        border-radius:16px;
+    }
+    .reel-overlay { padding:18px; }
+    .reel-overlay h3 { font-size:1.15rem; }
+
+    .partner-form-shell,
+    .partner-card,
+    .match-score-card,
+    .match-summary-box {
+        border-radius:18px;
+    }
+
+    footer { padding-bottom:max(38px, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 420px) {
+    .hero-copy h1 { font-size:2.45rem; }
+    .eyebrow { font-size:.62rem; letter-spacing:.12em; }
+    .match-label-row { padding:12px; }
+    .team-side img { width:52px!important; height:52px!important; }
+    .final-score-mark { min-width:72px; font-size:1.8rem; gap:5px; }
+    .story-step p { font-size:.78rem; }
+    .partners-header h2 { font-size:2rem; }
+}
+
+/* Respect reduced-motion preferences and reduce main-thread/GPU work. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after {
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+}
