@@ -1740,3 +1740,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .partner-submit .icon-glyph { font-size:1rem; margin-right:7px; }
 .confirmed-result .icon-glyph { color:#34d399!important; }
 .launch-pad .icon-glyph { margin-right:5px; color:var(--primary); }
+
+
+.partner-logo-small {
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin-bottom: 18px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #121820, #070a0e);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 14px 34px rgba(0,0,0,.22);
+}
+.partner-logo-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+@media (max-width: 640px) {
+    .partner-logo-small {
+        width: 96px;
+        height: 96px;
+    }
+}

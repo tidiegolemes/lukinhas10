@@ -50,13 +50,15 @@
       "name": "Bolos da Didi",
       "status": "Parceiro",
       "relationship_type": "apoio à trajetória esportiva",
-      "official_link": "https://www.instagram.com/bolos_da_didi/"
+      "official_link": "https://www.instagram.com/bolos_da_didi/",
+      "logo": "https://www.lucasazambuja.com.br/parceiro-bolos-didi.webp"
     },
     {
-      "name": "Barbearia do Oze",
+      "name": "Barbearia do Zé",
       "status": "Parceiro",
       "relationship_type": "apoio à trajetória esportiva",
-      "official_link": "https://www.instagram.com/barbeariadooze/"
+      "official_link": "https://www.instagram.com/barbeariadooze/",
+      "logo": "https://www.lucasazambuja.com.br/parceiro-barbearia-oze.webp"
     },
     {
       "name": "Real Gaúcho Futsal",
@@ -64,7 +66,8 @@
       "relationship_type": "apoio esportivo e formação complementar no futsal",
       "sponsor": false,
       "note": "Lucas treina na escolinha de futsal do Real Gaúcho. Não é patrocinador.",
-      "official_link": "https://www.instagram.com/realgauchofutsal/"
+      "official_link": "https://www.instagram.com/realgauchofutsal/",
+      "logo": "https://www.lucasazambuja.com.br/parceiro-real-gaucho.webp"
     }
   ],
   "partner_contact": {
