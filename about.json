@@ -9,7 +9,7 @@
   "official_website": "https://www.lucasazambuja.com.br/",
   "verification": "Atleta federado",
   "agency": "FutTalento",
-  "last_updated": "2026-10-05",
+  "last_updated": "2026-10-06",
   "recent_highlight": {
     "event": "Final da Copa Base Baby 2026 - Gre-Nal Sub-8",
     "opponent": "Sport Club Internacional",
@@ -41,9 +41,30 @@
     {
       "name": "Guimarães",
       "status": "Parceiro oficial",
+      "relationship_type": "parceria comercial",
       "slogan": "Energia que movimenta!",
       "logo": "https://www.lucasazambuja.com.br/parceiro-guimaraes.jpg",
-      "official_link": null
+      "official_link": "https://www.instagram.com/guimaraes.brasil/"
+    },
+    {
+      "name": "Bolos da Didi",
+      "status": "Parceiro",
+      "relationship_type": "apoio à trajetória esportiva",
+      "official_link": "https://www.instagram.com/bolos_da_didi/"
+    },
+    {
+      "name": "Barbearia do Oze",
+      "status": "Parceiro",
+      "relationship_type": "apoio à trajetória esportiva",
+      "official_link": "https://www.instagram.com/barbeariadooze/"
+    },
+    {
+      "name": "Real Gaúcho Futsal",
+      "status": "Parceiro esportivo",
+      "relationship_type": "apoio esportivo e formação complementar no futsal",
+      "sponsor": false,
+      "note": "Lucas treina na escolinha de futsal do Real Gaúcho. Não é patrocinador.",
+      "official_link": "https://www.instagram.com/realgauchofutsal/"
     }
   ],
   "partner_contact": {
