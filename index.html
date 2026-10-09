@@ -122,6 +122,18 @@
           "inLanguage": "pt-BR"
         },
         {
+          "@type": "VideoObject",
+          "@id": "https://www.lucasazambuja.com.br/#video-futsal-skills-2026",
+          "name": "Lucas Azambuja | Futsal Prime Skills 2026",
+          "description": "Compilado dos melhores lances de futsal de Lucas Azambuja, com dribles, jogadas, finalizações e habilidades com a perna esquerda.",
+          "thumbnailUrl": "https://www.lucasazambuja.com.br/lucas-futsal-skills-capa.jpg",
+          "uploadDate": "2026-10-09",
+          "duration": "PT47S",
+          "contentUrl": "https://www.lucasazambuja.com.br/lucas-futsal-skills-web.mp4",
+          "embedUrl": "https://www.lucasazambuja.com.br/#destaque",
+          "inLanguage": "pt-BR"
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://www.lucasazambuja.com.br/#faq",
           "mainEntity": [
@@ -153,6 +165,26 @@
         #modalImg { max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 0 30px var(--primary); border: 2px solid white; transition: 0.3s; }
         .clickable-img { cursor: zoom-in; transition: 0.3s; }
         .clickable-img:hover { filter: brightness(1.2); }
+    </style>
+<style id="highlights-carousel-styles">
+        .highlights-carousel{position:sticky;top:92px;width:min(100%,420px);margin:0 auto;min-width:0}
+        .highlights-viewport{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:28px}
+        .highlights-viewport::-webkit-scrollbar{display:none}
+        .highlights-slide{flex:0 0 100%;width:100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+        .highlights-slide .featured-video-shell{position:relative;top:auto;width:100%;margin:0}
+        .highlights-slide .featured-video-shell video{width:100%;aspect-ratio:9/16;object-fit:cover}
+        .highlights-slide .video-meta-strip{gap:6px;letter-spacing:.015em;font-size:.60rem}
+        .highlights-slide .video-meta-strip span:first-child{color:#24dfff}
+        .highlights-controls{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:14px auto 0;max-width:240px}
+        .highlights-arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(60,205,255,.35);background:rgba(255,255,255,.06);color:white;font:700 30px/1 sans-serif;cursor:pointer}
+        .highlights-arrow:hover,.highlights-arrow:focus-visible{background:rgba(35,185,235,.20);outline-color:#24dfff}
+        .highlights-dots{display:flex;align-items:center;gap:10px}
+        .highlights-dots button{width:10px;height:10px;padding:0;border:0;border-radius:99px;background:#637389;cursor:pointer;transition:width .2s ease,background .2s ease}
+        .highlights-dots button[aria-current="true"]{width:26px;background:#24dfff}
+        .highlights-hint{margin:8px 0 0;text-align:center;color:#a4b0c2;font-size:.75rem}
+        .highlights-hint strong{color:#fff}
+        @media(max-width:860px){.highlights-carousel{position:relative;top:auto}}
+        @media(prefers-reduced-motion:reduce){.highlights-viewport{scroll-behavior:auto}.highlights-dots button{transition:none}}
     </style>
 </head>
 <body>
@@ -225,25 +257,46 @@
         <div class="container">
             <div class="match-feature-heading">
                 <div>
-                    <span class="eyebrow">COPA BASE BABY 2026 • FINAL</span>
-                    <h2>Gre-Nal de campeão: <span class="highlight">gol + assistência</span></h2>
-                    <p>O jogo que fechou o título ganhou uma área própria no perfil, com os dados do confronto e o vídeo completo dos melhores momentos de Lucas.</p>
+                    <span class="eyebrow">MELHORES MOMENTOS • 2026</span>
+                    <h2>Lucas em ação: <span class="highlight">Gre-Nal + Futsal Skills</span></h2>
+                    <p>Confira os lances decisivos do Gre-Nal e o novo compilado de skills no futsal. Ao lado, os detalhes da final da Copa Base Baby.</p>
                 </div>
                 <span class="match-champion-badge"><span class="icon-glyph" aria-hidden="true">🏆</span> CAMPEÃO</span>
             </div>
 
             <div class="match-feature-grid">
                 <div class="match-video-column">
-                    <div class="featured-video-shell">
-                        <video controls playsinline preload="none" data-poster="copa-base-baby-2026-grenal-lucas-cover.png" aria-label="Vídeo de Lucas Azambuja na final da Copa Base Baby 2026 contra o Internacional">
-                            <source src="lucas-copa-base-baby-2026-final-grenal.mp4" type="video/mp4">
-                            Seu navegador não suporta reprodução de vídeo HTML5.
-                        </video>
-                        <div class="video-meta-strip">
-                            <span><span class="icon-glyph" aria-hidden="true">▶</span> MELHORES MOMENTOS</span>
-                            <span>48s • vertical 9:16</span>
+                    <section class="highlights-carousel" id="highlightsCarousel" aria-label="Carrossel dos vídeos de Lucas Azambuja">
+                        <div class="highlights-viewport" data-carousel-track tabindex="0" aria-label="Deslize para ver mais vídeos">
+                            <article class="highlights-slide" aria-label="Vídeo 1 de 2: Gre-Nal">
+                                <div class="featured-video-shell">
+                                    <video controls playsinline preload="none" data-poster="copa-base-baby-2026-grenal-lucas-cover.png" aria-label="Gre-Nal da final da Copa Base Baby 2026: gol e assistência de Lucas Azambuja">
+                                        <source src="lucas-copa-base-baby-2026-final-grenal.mp4" type="video/mp4">
+                                        Seu navegador não suporta vídeos HTML5.
+                                    </video>
+                                    <div class="video-meta-strip"><span>⚽ GRE-NAL • GOL + ASSISTÊNCIA</span><span>48s • 9:16</span></div>
+                                </div>
+                            </article>
+                            <article class="highlights-slide" aria-label="Vídeo 2 de 2: Futsal Skills">
+                                <div class="featured-video-shell">
+                                    <video controls playsinline preload="none" data-poster="lucas-futsal-skills-capa.jpg" aria-label="Lucas Azambuja Futsal Skills: dribles, finalizações e melhores lances">
+                                        <source src="lucas-futsal-skills-web.mp4" type="video/mp4">
+                                        Seu navegador não suporta vídeos HTML5.
+                                    </video>
+                                    <div class="video-meta-strip"><span>🔥 FUTSAL • PRIME SKILLS</span><span>47s • 9:16</span></div>
+                                </div>
+                            </article>
                         </div>
-                    </div>
+                        <div class="highlights-controls" aria-label="Navegação dos vídeos">
+                            <button class="highlights-arrow" type="button" data-carousel-prev aria-label="Vídeo anterior">‹</button>
+                            <div class="highlights-dots" aria-label="Escolher vídeo">
+                                <button type="button" data-carousel-dot="0" aria-label="Ver Gre-Nal" aria-current="true"></button>
+                                <button type="button" data-carousel-dot="1" aria-label="Ver Futsal Skills" aria-current="false"></button>
+                            </div>
+                            <button class="highlights-arrow" type="button" data-carousel-next aria-label="Próximo vídeo">›</button>
+                        </div>
+                        <p class="highlights-hint">Deslize para assistir: <strong>Gre-Nal</strong> ou <strong>Futsal Skills</strong></p>
+                    </section>
                 </div>
 
                 <div class="match-data-column">
@@ -656,22 +709,56 @@
         }
     });
 
-    const lazyPosterVideo = document.querySelector('video[data-poster]');
-    if (lazyPosterVideo) {
-        const loadPoster = () => {
-            if (!lazyPosterVideo.poster) lazyPosterVideo.poster = lazyPosterVideo.dataset.poster;
-        };
+    // Posters are loaded only when each video approaches the viewport.
+    document.querySelectorAll('video[data-poster]').forEach((video) => {
+        const loadPoster = () => { if (!video.poster) video.poster = video.dataset.poster; };
         if ('IntersectionObserver' in window) {
-            const posterObserver = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries, self) => {
                 if (entries.some(entry => entry.isIntersecting)) {
                     loadPoster();
-                    observer.disconnect();
+                    self.disconnect();
                 }
             }, { rootMargin: '500px 0px' });
-            posterObserver.observe(lazyPosterVideo);
+            observer.observe(video);
         } else {
             loadPoster();
         }
+    });
+
+    // Lightweight touch/swipe carousel. Pauses the other clip when switching.
+    const highlightsCarousel = document.getElementById('highlightsCarousel');
+    if (highlightsCarousel) {
+        const viewport = highlightsCarousel.querySelector('[data-carousel-track]');
+        const slides = [...highlightsCarousel.querySelectorAll('.highlights-slide')];
+        const dots = [...highlightsCarousel.querySelectorAll('[data-carousel-dot]')];
+        let current = 0;
+        let scheduled = false;
+        const setCurrent = (index) => {
+            current = Math.min(slides.length - 1, Math.max(0, index));
+            dots.forEach((dot,i) => dot.setAttribute('aria-current', String(i===current)));
+            slides.forEach((slide,i) => {
+                if(i !== current) slide.querySelector('video')?.pause();
+            });
+        };
+        const goToVideo = (index) => {
+            const dest = (index + slides.length) % slides.length;
+            viewport.scrollTo({ left: dest * viewport.clientWidth, behavior: 'smooth' });
+            setCurrent(dest);
+        };
+        highlightsCarousel.querySelector('[data-carousel-prev]').addEventListener('click', () => goToVideo(current - 1));
+        highlightsCarousel.querySelector('[data-carousel-next]').addEventListener('click', () => goToVideo(current + 1));
+        dots.forEach((dot,i) => dot.addEventListener('click', () => goToVideo(i)));
+        viewport.addEventListener('scroll', () => {
+            if (scheduled) return;
+            scheduled = true;
+            requestAnimationFrame(() => {
+                setCurrent(Math.round(viewport.scrollLeft / viewport.clientWidth));
+                scheduled = false;
+            });
+        }, { passive: true });
+        slides.forEach(slide => slide.querySelector('video')?.addEventListener('play', () => {
+            slides.forEach(other => { if(other !== slide) other.querySelector('video')?.pause(); });
+        }));
     }
 
     const shareProfile = document.getElementById('shareProfile');
