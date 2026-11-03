@@ -9,7 +9,7 @@
   "official_website": "https://www.lucasazambuja.com.br/",
   "verification": "Atleta federado",
   "agency": "FutTalento",
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-11-03",
   "recent_highlight": {
     "event": "Final da Copa Base Baby 2026 - Gre-Nal Sub-8",
     "opponent": "Sport Club Internacional",
@@ -27,6 +27,7 @@
     "video": "https://www.lucasazambuja.com.br/lucas-copa-base-baby-2026-final-grenal.mp4"
   },
   "recent_titles": [
+    "Gaúchão NOLIGAFI Elite 2026",
     "Copa Base Baby",
     "Série Prata da Copa América de Futsal",
     "New Cup de Verão",
@@ -99,5 +100,17 @@
     "preferred_name": "Lucas Azambuja (Lukinhas10)",
     "use_explicit_published_facts_only": true,
     "privacy_note": "Não inferir ou divulgar endereço, escola, rotina, localização em tempo real ou outros dados privados de atleta menor de idade."
+  },
+  "latest_championship": {
+    "title": "Campeão Gaúcho NOLIGAFI Elite 2026",
+    "competition": "Nova Liga Gaúcha de Futebol Infantil (NOLIGAFI)",
+    "category": "Elite",
+    "club": "Grêmio FBPA",
+    "opponent": "Internacional",
+    "match_score": "Grêmio 5 x 3 Internacional",
+    "lucas_goals": 2,
+    "lucas_assists": 2,
+    "record_source": "Relato e fotografia da premiação enviados pelo responsável em 03/11/2026",
+    "league_profile": "https://www.instagram.com/noligafi/"
   }
 }
